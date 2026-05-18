@@ -1,0 +1,57 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Pixi / Nebi local environment state
+.pixi/
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Temporary / backup files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Build or export outputs
+dist/
+build/
+out/
+site/
+
+# Generated documentation artifacts
+*.pdf
+*.html
+
+# Test / coverage artifacts
+.coverage
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Node-style leftovers if UI tooling gets added later
+node_modules/
+
+# OS / misc
+Thumbs.db
