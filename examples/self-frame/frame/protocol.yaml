@@ -1,0 +1,88 @@
+document_id: "frame.protocol.self.primary"
+scope: "project:frame-protocol/self-frame"
+inherits_from: []
+applies_to:
+  entity_types:
+    - "human"
+    - "agent"
+visibility: "internal"
+status: "draft"
+priority: 100
+summary: "Scoped Frame describing the draft Frame protocol as a self-referential example."
+owners:
+  - "protocol-authors"
+reviewers:
+  - "repository-contributors"
+effective_date: "2026-05-18"
+source_refs:
+  - kind: "document"
+    uri: "file://../../docs/protocol-sketch.md"
+    role: "protocol-source"
+  - kind: "document"
+    uri: "file://../../docs/design-note.md"
+    role: "framing-source"
+decision_refs:
+  - kind: "document"
+    uri: "file://../references/rationale.md"
+    role: "example-rationale"
+sections:
+  vision:
+    intent:
+      - "Make Frames first-class, shareable artifacts for cultural and operational context."
+      - "Keep Frames readable by humans and usable by Cogs."
+  goals:
+    objectives:
+      - "Demonstrate the Frame protocol with a concrete example."
+      - "Expose awkward fields or missing concepts in the draft through use."
+  terminology:
+    preferred_terms:
+      - term: "Frame"
+        prefer_over:
+          - "alignment file"
+          - "memory file"
+      - term: "Frame package"
+        prefer_over:
+          - "alignment bundle"
+  rules:
+    required:
+      - "Treat this example as illustrative protocol usage, not as a finalized specification."
+      - "Keep semantic meaning in Frame files rather than in Nebi-specific behavior."
+    forbidden:
+      - "Assume that packaging details shown here are final."
+  norms:
+    expectations:
+      - "Prefer explicit provenance over unsupported assertions."
+      - "Prefer simple text artifacts over opaque application objects."
+  skills:
+    required:
+      - "protocol design"
+      - "cross-scope reasoning"
+      - "human-readable technical writing"
+  tool_specifications:
+    required:
+      - "Nebi-compatible package wrapper for versioning and sharing"
+  prompts:
+    reusable_fragments:
+      - "State scope, inheritance, visibility, and review state explicitly."
+      - "Differentiate normative guidance from descriptive background."
+  architecture:
+    summaries:
+      - "A Frame is the semantic artifact; Nebi is a potential packaging and delivery layer."
+      - "Desktop sharing should consume and expose Frames without redefining the protocol."
+  business_process:
+    procedures:
+      - "Protocol revisions should update both the abstract sketch and at least one concrete example Frame when practical."
+      - "Export or sharing behavior should remain review-gated."
+  style:
+    communication:
+      - "Use direct, explanatory language."
+      - "Favor inspectable structure over clever compression."
+  review:
+    required:
+      - "Check whether each field in this example still matches the current protocol sketch."
+      - "Call out any section that feels artificial or forced."
+  escalation:
+    triggers:
+      - "protocol-field-ambiguity"
+      - "desktop-sharing-requirement-conflict"
+      - "nebi-packaging-assumption-conflict"

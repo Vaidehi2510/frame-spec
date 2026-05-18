@@ -1,0 +1,14 @@
+protocol_version: "0.1"
+package_id: "openteams.company-core"
+package_version: "0.1.0"
+package_name: "OpenTeams Company Core Frame"
+publisher: "openteams"
+summary: "Company-level Frame package with core cultural and operational context."
+default_format: "yaml"
+root_scope: "company:openteams"
+frames:
+  - "company.yaml"
+distribution:
+  visibility: "internal"
+review:
+  status: "draft"

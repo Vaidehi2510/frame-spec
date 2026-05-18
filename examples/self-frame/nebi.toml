@@ -1,0 +1,7 @@
+# Illustrative only: this shows one place Nebi metadata could sit
+# around a Frame package. The exact contract is not yet final.
+
+[workspace]
+name = "frame-protocol-self-frame"
+version = "0.1.0"
+description = "Self-referential example Frame package for the Frame protocol."

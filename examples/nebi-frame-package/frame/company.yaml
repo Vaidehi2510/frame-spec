@@ -1,0 +1,21 @@
+document_id: "openteams.company.core"
+scope: "company:openteams"
+inherits_from: []
+visibility: "internal"
+status: "draft"
+summary: "Core company-level Frame for OpenTeams."
+sections:
+  terminology:
+    preferred_terms:
+      - term: "Frame"
+        prefer_over:
+          - "shared context file"
+  goals:
+    objectives:
+      - "Preserve coherent organizational context across teams and Cogs."
+  rules:
+    required:
+      - "Export only reviewed Frames outside the company."
+  style:
+    communication:
+      - "Use precise, collaborative language."
