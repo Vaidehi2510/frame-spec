@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This note translates the alignment review against [Intelligence Hub Whitepaper - v4.pdf](</Volumes/Home/Users/trentoliphant/Downloads/Intelligence Hub Whitepaper - v4.pdf>) into a concrete protocol-focused gap list for `frame-protocol v1`.
+This note translates the alignment review against [Intelligence Hub Whitepaper - v4.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) into a concrete protocol-focused gap list for `frame-protocol v1`.
 
 The current repository already aligns strongly with the whitepaper's core definition of a Frame:
 
