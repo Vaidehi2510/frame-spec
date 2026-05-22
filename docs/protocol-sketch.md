@@ -12,6 +12,7 @@ The first version should optimize for:
 - Cog usability
 - explicit scope
 - explicit inheritance
+- portable identity
 - explicit review state
 - selective sharing
 - diffability in version control
@@ -55,6 +56,7 @@ The document is the concrete file representation of a Frame.
 
 It answers:
 
+- what artifact identity it claims
 - what scope it applies to
 - what it inherits from
 - what is visible or shareable
@@ -158,6 +160,20 @@ decision_refs:
 ## Frame Document Draft
 
 ```yaml
+identity:
+  frame_id: "acme.company.core"
+  version: "1.2.0"
+  publisher: "acme"
+  canonical_source:
+    uri: "nebi://acme/frames/company-core"
+    digest: "sha256:4d5e6f"
+  authority:
+    status: "official"
+    maintained_by:
+      - "leadership"
+  lineage:
+    derived_from: []
+    variant_of: null
 document_id: "acme.company.core"
 scope: "company:acme"
 inherits_from: []
@@ -206,6 +222,48 @@ sections:
     expectations:
       - "Make important assumptions explicit when collaboration spans teams."
 ```
+
+## Canonical Identity And Authority
+
+Frames should remain self-describing even when copied between:
+
+- repositories
+- Hubs
+- local memory
+- partner exports
+- marketplaces
+
+That means a consumer should be able to tell, from the artifact itself:
+
+- what logical Frame this is
+- which version it represents
+- who published or stewards it
+- where its authoritative published source lives
+- whether it should be treated as official, local, partner-provided, or forked
+- what lineage it has
+
+The protocol should therefore carry a structured identity block with fields such as:
+
+- `frame_id`
+- `version`
+- `publisher`
+- `canonical_source`
+- `authority`
+- `lineage`
+
+Suggested semantics:
+
+- `frame_id` identifies the logical Frame across copies and versions
+- `version` identifies the revision of that logical Frame
+- `publisher` identifies the publishing or stewarding entity
+- `canonical_source.uri` points to the authoritative published source for that version
+- `canonical_source.digest` optionally identifies the expected immutable content
+- `authority.status` expresses whether the artifact claims to be `official`, `community`, `partner`, `fork`, `local`, or `deprecated`
+- `lineage` preserves derivation when a Frame is exported, adapted, or forked
+
+This should be treated as protocol metadata, not as an implementation-specific registry lookup.
+
+External systems may still maintain indexes, caches, and assignment graphs, but those should complement rather than replace artifact-local identity metadata.
 
 ## Scope Model
 
@@ -280,6 +338,13 @@ Suggested reference fields:
 
 The goal is traceability, not a full graph model.
 
+Canonical identity complements provenance:
+
+- provenance explains where claims and decisions came from
+- identity explains what artifact this is and what source it claims as authoritative
+
+Both are needed when the same Frame may be copied, exported, forked, mirrored, or installed in multiple places.
+
 ## YAML As Current Default
 
 YAML is the current default because it fits the protocol's current goals:
@@ -297,12 +362,15 @@ The minimal useful version likely needs only:
 
 1. a package manifest
 2. one scoped Frame document
-3. explicit `scope`
-4. explicit `inherits_from`
-5. explicit `visibility`
-6. explicit `status`
-7. a small section taxonomy
-8. optional provenance references
+3. explicit `frame_id`
+4. explicit `version`
+5. explicit `scope`
+6. explicit `inherits_from`
+7. explicit `visibility`
+8. explicit `status`
+9. a small section taxonomy
+10. optional provenance references
+11. optional but standard canonical source and authority metadata
 
 ## Open Questions
 
@@ -310,4 +378,5 @@ The minimal useful version likely needs only:
 2. How strict should override validation be in v0?
 3. Which sections are required versus merely allowed?
 4. What should Desktop sharing require from Frame metadata?
-5. How much schema enforcement should exist before more real examples are authored?
+5. How should canonical identity behave for reviewed exports, local copies, and forks?
+6. How much schema enforcement should exist before more real examples are authored?

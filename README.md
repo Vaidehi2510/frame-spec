@@ -18,6 +18,7 @@ This repository seed is a standalone starting point for the Frame protocol as it
 - Read [docs/design-note.md](docs/design-note.md) for the problem framing and open questions.
 - Read [docs/protocol-sketch.md](docs/protocol-sketch.md) for the draft protocol shape.
 - Read [docs/nebi-integration.md](docs/nebi-integration.md) for one possible Nebi-based packaging and delivery model.
+- Read [docs/v1-gap-analysis.md](docs/v1-gap-analysis.md) for a concrete gap list between the current draft and the Intelligence Hub whitepaper assumptions.
 - Review [examples/self-frame/README.md](examples/self-frame/README.md) for a concrete self-referential example.
 
 ## Repository Layout
@@ -29,6 +30,7 @@ docs/
   protocol-sketch.md
   nebi-integration.md
   desktop-sharing.md
+  v1-gap-analysis.md
 spec/
   README.md
 examples/

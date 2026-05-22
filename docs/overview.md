@@ -84,6 +84,17 @@ The general idea is:
 - narrower scopes refine or constrain them
 - exported Frames include only what is intentionally shareable
 
+Frames should also remain self-describing when copied or shared.
+
+That implies the protocol should carry structured identity metadata for:
+
+- what logical Frame an artifact is
+- which version it represents
+- who published or stewards it
+- what source it claims as authoritative
+
+This helps distinguish an official published Frame from a local copy, reviewed export, or forked derivative without depending on one particular storage system or application.
+
 ## Relationship To Cogs And Progs
 
 Frames are not the same thing as Cogs or Progs.
