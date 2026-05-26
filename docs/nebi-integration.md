@@ -101,4 +101,4 @@ That means:
 
 ## Current Recommendation
 
-Use Nebi examples to make the distribution story concrete, but keep the protocol definition independent enough that another delivery system could carry the same Frame files later.
+Use Nebi examples to make the distribution story concrete, but keep the spec definition independent enough that another delivery system could carry the same Frame files later.

@@ -1,8 +1,8 @@
-# Frame Protocol V1 Gap Analysis
+# Frame Spec V1 Gap Analysis
 
 ## Purpose
 
-This note translates the alignment review against [Intelligence Hub Whitepaper - v4.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) into a concrete protocol-focused gap list for `frame-protocol v1`.
+This note translates the alignment review against [Intelligence Hub Whitepaper - v4.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) into a concrete spec-focused gap list for `frame-spec v1`.
 
 The current repository already aligns strongly with the whitepaper's core definition of a Frame:
 
@@ -12,7 +12,7 @@ The current repository already aligns strongly with the whitepaper's core defini
 - inheritable and shareable
 - distinct from Cogs, Ops, Desktop, and Nebi
 
-What the whitepaper adds is not a replacement of the current direction, but a stronger set of product and ecosystem assumptions that the protocol will eventually need to support.
+What the whitepaper adds is not a replacement of the current direction, but a stronger set of product and ecosystem assumptions that the spec will eventually need to support.
 
 ## Alignment Summary
 
@@ -20,13 +20,13 @@ The repository and whitepaper are already aligned on:
 
 - Frames as first-class artifacts
 - Frames as a separate layer from Cogs and Ops
-- open protocol plus text-first artifact shape
+- open spec plus text-first artifact shape
 - inheritance across organizational scopes
 - selective sharing across boundaries
 - Nebi as packaging and distribution infrastructure
 - Desktop as a consumer and management surface rather than the source of truth
 
-This means the protocol does not need a conceptual reset.
+This means the spec does not need a conceptual reset.
 
 It does need a sharper `v1` contract.
 
@@ -52,7 +52,7 @@ Current docs describe inheritance well enough for a hierarchy, but they do not y
 - how conflicts are resolved
 - how temporary or session-local layers behave
 
-This is the largest protocol gap.
+This is the largest spec gap.
 
 ### 2. Sharing is too coarse-grained
 
@@ -75,7 +75,7 @@ The whitepaper introduces a local-first Desktop behavior in which a user's activ
 - authored personal Frames
 - temporary or session-specific Frames
 
-The current protocol draft avoids application-specific objects, which is good, but it still needs a way to represent the provenance and lifecycle of:
+The current spec draft avoids application-specific objects, which is good, but it still needs a way to represent the provenance and lifecycle of:
 
 - local-only context
 - promoted context
@@ -109,7 +109,7 @@ The whitepaper expects more operational governance:
 - publishability gates
 - auditability for how a Frame was applied
 
-The protocol does not need to encode a full workflow engine, but it should expose enough state for multiple tools to implement one consistently.
+The spec does not need to encode a full workflow engine, but it should expose enough state for multiple tools to implement one consistently.
 
 ### 6. Scope taxonomy is too narrow for the whitepaper
 
@@ -122,7 +122,7 @@ The whitepaper also implies:
 - community or consortium scope
 - temporary ad-hoc session scope
 
-These do not all need equal weight in `v1`, but the protocol should stop acting as if organizational hierarchy alone is sufficient.
+These do not all need equal weight in `v1`, but the spec should stop acting as if organizational hierarchy alone is sufficient.
 
 ### 7. The relationship to Cogs and Ops needs a stronger contract
 
@@ -134,7 +134,7 @@ The whitepaper goes further and assumes:
 - Ops declare required or recommended Frames
 - a Hub can apply local Frames during install or execution
 
-The Frame protocol does not need to absorb Cog or Op semantics, but it should define the minimum interoperable contract those systems rely on.
+The Frame spec does not need to absorb Cog or Op semantics, but it should define the minimum interoperable contract those systems rely on.
 
 ### 8. Nebi packaging is still too ambiguous for v1
 
@@ -142,7 +142,7 @@ The current docs intentionally leave room for `nebi.toml`, `pixi.toml`, or anoth
 
 That flexibility is reasonable for a sketch, but the whitepaper assumes Nebi-backed installation and lifecycle management are concrete enough to support marketplace exchange.
 
-For `v1`, the protocol should choose one minimal packaging integration pattern, even if it remains explicitly provisional.
+For `v1`, the spec should choose one minimal packaging integration pattern, even if it remains explicitly provisional.
 
 ### 9. Canonical identity and official-source semantics are missing
 
@@ -167,13 +167,13 @@ It also affects:
 - duplicate detection across Hubs
 - promotion of local or derived Frames back into shared libraries
 
-Without an explicit canonical-source concept, different systems will invent their own ideas of what "official" means, usually based on storage location. That would make the protocol less portable and less trustworthy.
+Without an explicit canonical-source concept, different systems will invent their own ideas of what "official" means, usually based on storage location. That would make the spec less portable and less trustworthy.
 
 See [canonical-identity-proposal.md](canonical-identity-proposal.md) for a more exact field-level proposal.
 
 ## Recommended V1 Additions
 
-The following additions would move the current draft closer to the whitepaper's implied requirements without collapsing the protocol into application-specific behavior.
+The following additions would move the current draft closer to the whitepaper's implied requirements without collapsing the spec into application-specific behavior.
 
 ### A. Add explicit composition metadata
 
@@ -271,7 +271,7 @@ Suggested `origin` values:
 - `community`
 - `derived`
 
-This keeps the protocol text-based while supporting the whitepaper's local memory and promotion story.
+This keeps the spec text-based while supporting the whitepaper's local memory and promotion story.
 
 ### D. Expand publication and discovery metadata
 
@@ -340,7 +340,7 @@ review_log:
     notes: "Approved for internal use and partner-safe export profile."
 ```
 
-This does not make the protocol workflow-heavy, but it does make it governable.
+This does not make the spec workflow-heavy, but it does make it governable.
 
 ### F. Expand scope support
 
@@ -367,7 +367,7 @@ This matters because the whitepaper explicitly assumes personal Frames, communit
 
 ### G. Define a minimal interoperability contract for Cogs and Ops
 
-The Frame protocol should state what an external system can rely on.
+The Frame spec should state what an external system can rely on.
 
 Suggested interoperable concepts:
 
@@ -387,7 +387,7 @@ This boundary should be made explicit in the spec.
 
 ### H. Choose a provisional Nebi wrapper pattern for v1
 
-The protocol should not let packaging define meaning, but `v1` should standardize one reference packaging path so examples, validators, and marketplace tooling do not drift.
+The spec should not let packaging define meaning, but `v1` should standardize one reference packaging path so examples, validators, and marketplace tooling do not drift.
 
 Recommended near-term choice:
 
@@ -399,7 +399,7 @@ The exact wrapper can still be marked provisional, but the repo should stop demo
 
 ### I. Add canonical identity and authoritative-source fields
 
-The protocol should define how a Frame carries its stable identity and how it points to the artifact or publication record that should be treated as authoritative.
+The spec should define how a Frame carries its stable identity and how it points to the artifact or publication record that should be treated as authoritative.
 
 Suggested fields:
 
@@ -437,7 +437,7 @@ Intent:
 - `authority` gives consumers a portable trust hint
 - `derived_from` clarifies lineage when a Frame has been forked, localized, or adapted
 
-This should be defined as protocol metadata, while resolution and enforcement remain implementation choices.
+This should be defined as spec metadata, while resolution and enforcement remain implementation choices.
 
 ## Proposed Minimum V1 Contract
 
@@ -509,7 +509,7 @@ This would align well with the whitepaper's ecosystem claims.
 
 Show a user-authored local Frame that is later promoted to a team library with provenance intact.
 
-This would test the whitepaper's local-memory story without forcing Desktop-specific objects into the protocol.
+This would test the whitepaper's local-memory story without forcing Desktop-specific objects into the spec.
 
 ### Example 5: Official Frame plus derived fork
 
@@ -524,7 +524,7 @@ This would test identity, authority, and update behavior directly.
 
 ## Prioritized V1 Roadmap
 
-If the protocol needs to sequence work, this is the order that best matches the whitepaper while keeping the design tractable.
+If the spec needs to sequence work, this is the order that best matches the whitepaper while keeping the design tractable.
 
 ### Priority 1
 
@@ -549,11 +549,11 @@ If the protocol needs to sequence work, this is the order that best matches the 
 
 The whitepaper validates the current repository's direction.
 
-It also raises the bar for what `frame-protocol v1` must specify.
+It also raises the bar for what `frame-spec v1` must specify.
 
 The key shift is this:
 
 - the current repo defines what a Frame is
-- the whitepaper assumes a protocol mature enough to support composition, selective sharing, local memory, promotion, discoverability, and auditable governance
+- the whitepaper assumes a spec mature enough to support composition, selective sharing, local memory, promotion, discoverability, and auditable governance
 
 That gap is bridgeable without changing the core philosophy of the repo.

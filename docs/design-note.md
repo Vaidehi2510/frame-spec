@@ -59,18 +59,18 @@ Important unresolved questions include:
 4. What review states should be visible to both humans and Cogs?
 5. How should source and decision references be represented?
 6. What should a built-in Desktop sharing workflow require?
-7. How much should the first protocol optimize for human authoring versus machine validation?
+7. How much should the first spec optimize for human authoring versus machine validation?
 
 ## Current Boundary
 
-The Frame protocol should remain distinct from:
+The Frame spec should remain distinct from:
 
 - Cogs
 - Progs
 - application-specific UI objects
 - one particular packaging system
 
-The protocol may be packaged and distributed through Nebi, but Nebi should not define what a Frame means.
+The spec may be packaged and distributed through Nebi, but Nebi should not define what a Frame means.
 
 ## Product Direction
 
@@ -79,12 +79,12 @@ One likely product direction is that Frame sharing becomes a built-in feature of
 That suggests a few design constraints:
 
 - a Frame should still exist as a normal text artifact or folder outside the app
-- Desktop should discover, import, export, and attach Frames without redefining the protocol
+- Desktop should discover, import, export, and attach Frames without redefining the spec
 - review state, provenance, and scope should remain visible outside the app
 
 ## Recommended Near-Term Path
 
-1. Define a small v0 protocol.
+1. Define a small v0 spec.
 2. Create real example Frames.
 3. Test inheritance, sharing, and provenance against real use.
 4. Use Nebi as a likely packaging and versioning path without overcommitting too early.

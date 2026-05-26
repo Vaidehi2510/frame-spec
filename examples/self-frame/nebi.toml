@@ -2,6 +2,6 @@
 # around a Frame package. The exact contract is not yet final.
 
 [workspace]
-name = "frame-protocol-self-frame"
+name = "frame-spec-self-frame"
 version = "0.1.0"
-description = "Self-referential example Frame package for the Frame protocol."
+description = "Self-referential example Frame package for the Frame spec."

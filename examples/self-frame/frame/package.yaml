@@ -1,13 +1,13 @@
-protocol_version: "0.1"
-package_id: "frame.protocol.self"
+spec_version: "0.1"
+package_id: "frame.spec.self"
 package_version: "0.1.0"
-package_name: "Frame Protocol Self Frame"
-publisher: "frame-protocol"
-summary: "A self-referential Frame package that describes the Frame protocol as a Frame."
+package_name: "Frame Spec Self Frame"
+publisher: "frame-spec"
+summary: "A self-referential Frame package that describes the Frame spec as a Frame."
 default_format: "yaml"
-root_scope: "project:frame-protocol/self-frame"
+root_scope: "project:frame-spec/self-frame"
 frames:
-  - "protocol.yaml"
+  - "spec.yaml"
 distribution:
   visibility: "internal"
 review:
@@ -15,7 +15,7 @@ review:
   approved_by: []
 source_refs:
   - kind: "document"
-    uri: "file://frame/protocol.yaml"
+    uri: "file://frame/spec.yaml"
     role: "primary-frame"
 decision_refs:
   - kind: "document"

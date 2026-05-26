@@ -2,12 +2,12 @@
 
 One likely product direction is that Frame sharing becomes a built-in Desktop feature.
 
-That suggests a few protocol-level requirements.
+That suggests a few spec-level requirements.
 
 ## Required Qualities
 
 - A Frame should remain a normal text artifact or folder outside the app.
-- Desktop should discover, import, export, and attach Frames without redefining the protocol.
+- Desktop should discover, import, export, and attach Frames without redefining the spec.
 - Review state should remain visible outside the app.
 - Provenance should remain visible outside the app.
 - Scope and visibility should remain explicit outside the app.
@@ -24,4 +24,4 @@ A Desktop client may eventually need to:
 
 ## Current Recommendation
 
-Design the protocol so Desktop can be a consumer and sharing surface, not the sole source of truth.
+Design the spec so Desktop can be a consumer and sharing surface, not the sole source of truth.

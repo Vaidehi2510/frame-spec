@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This note proposes an exact `v1` shape for canonical identity and authoritative-source metadata in the Frame protocol.
+This note proposes an exact `v1` shape for canonical identity and authoritative-source metadata in the Frame spec.
 
 The goal is to let a consumer answer these questions consistently:
 
@@ -12,7 +12,7 @@ The goal is to let a consumer answer these questions consistently:
 - What lineage does this Frame have?
 - What trust signal, if any, comes with this Frame?
 
-This proposal is intentionally limited to protocol metadata.
+This proposal is intentionally limited to spec metadata.
 
 It does not define:
 
@@ -140,7 +140,7 @@ Meaning:
 
 Notes:
 
-- the protocol should not require a single URI scheme
+- the spec should not require a single URI scheme
 - `nebi://` is a good reference example, not the only possible form
 - the `uri` may point to a package publication, registry entry, or stable manifest path
 
@@ -230,7 +230,7 @@ These are the core semantics I would recommend for `v1`.
 
 ### Rule 2
 
-`frame_id + version + publisher` should uniquely identify a published Frame version within the protocol.
+`frame_id + version + publisher` should uniquely identify a published Frame version within the spec.
 
 ### Rule 3
 
@@ -242,7 +242,7 @@ If `canonical_source.digest` is present, consumers may use it to determine wheth
 
 ### Rule 5
 
-`authority.status` is descriptive protocol metadata and must not by itself be treated as cryptographic proof.
+`authority.status` is descriptive spec metadata and must not by itself be treated as cryptographic proof.
 
 ### Rule 6
 
@@ -254,7 +254,7 @@ A local copy of an official Frame should normally preserve the original `frame_i
 
 ## Recommended Behaviors
 
-These are not strict protocol requirements, but they are the behaviors the model is designed to support.
+These are not strict spec requirements, but they are the behaviors the model is designed to support.
 
 ### Official published Frame
 
@@ -376,7 +376,7 @@ These are the main design choices still worth debating:
 2. Should `frame_id` be globally unique by convention, or formally namespaced by publisher?
 3. Should `variant_of` accept only a `frame_id`, or a fully qualified `frame_id@version`?
 4. Should `canonical_source` permit multiple URIs for mirrored authorities, or exactly one primary URI?
-5. Should the protocol require a signature field in `v1`, or leave signatures to packaging and registry layers?
+5. Should the spec require a signature field in `v1`, or leave signatures to packaging and registry layers?
 
 ## Recommendation
 
@@ -387,4 +387,4 @@ For `v1`, I would recommend:
 3. Include `authority.status` and `lineage` as optional but standard fields.
 4. Keep signatures and trust enforcement out of the core Frame document spec unless the team decides they are essential for first release.
 
-That gives the protocol a clean notion of "official version" without tying it to any single implementation.
+That gives the spec a clean notion of "official version" without tying it to any single implementation.

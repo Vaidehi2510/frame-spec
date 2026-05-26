@@ -1,4 +1,4 @@
-# Frame Protocol
+# Frame Spec
 
 Frames are scoped, text-based artifacts that carry the cultural and operational context within which work happens.
 
@@ -10,15 +10,15 @@ They are intended to be:
 - inheritable across scopes such as company, department, team, project, partner, or vendor
 - first-class artifacts that can be authored, discovered, sold, and shared independently
 
-This repository seed is a standalone starting point for the Frame protocol as its own project.
+This repository seed is a standalone starting point for the Frame spec as its own project.
 
 ## Start Here
 
 - Read [docs/overview.md](docs/overview.md) for the concept and current working definition.
 - Read [docs/design-note.md](docs/design-note.md) for the problem framing and open questions.
-- Read [docs/protocol-sketch.md](docs/protocol-sketch.md) for the draft protocol shape.
+- Read [docs/spec-sketch.md](docs/spec-sketch.md) for the draft spec shape.
 - Read [docs/nebi-integration.md](docs/nebi-integration.md) for one possible Nebi-based packaging and delivery model.
-- Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later protocol alignment notes.
+- Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later spec alignment notes.
 - Read [docs/v1-gap-analysis.md](docs/v1-gap-analysis.md) for a concrete gap list between the current draft and the Intelligence Hub whitepaper assumptions.
 - Review [examples/self-frame/README.md](examples/self-frame/README.md) for a concrete self-referential example.
 
@@ -28,7 +28,7 @@ This repository seed is a standalone starting point for the Frame protocol as it
 docs/
   overview.md
   design-note.md
-  protocol-sketch.md
+  spec-sketch.md
   nebi-integration.md
   desktop-sharing.md
   v1-gap-analysis.md
@@ -50,7 +50,7 @@ What exists now:
 
 - a working concept and definition for Frames
 - a design note describing the problem and direction
-- a protocol sketch for Frame package and document structure
+- a spec sketch for Frame package and document structure
 - a Nebi integration illustration
 - concrete example Frame packages
 

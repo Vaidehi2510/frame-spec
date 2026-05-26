@@ -2,7 +2,7 @@
 
 The following text captures the latest definition input that shaped this proposal:
 
-> A Frame is a scoped, text-based artifact — a file or folder of files using an open protocol — that carries the cultural and operational context within which work happens. Every organization has implicit context: brand voice, technical terminology, regulatory constraints, departmental conventions, team norms, project goals. Today, this lives in style guides, wikis, Slack history, onboarding documents, and the heads of senior employees. When AI is brought to bear without this context, the organization must re-explain itself in every interaction, and the resulting work suffers — generic, inconsistent, and disconnected from how the organization actually operates.
+> A Frame is a scoped, text-based artifact — a file or folder of files using an open spec — that carries the cultural and operational context within which work happens. Every organization has implicit context: brand voice, technical terminology, regulatory constraints, departmental conventions, team norms, project goals. Today, this lives in style guides, wikis, Slack history, onboarding documents, and the heads of senior employees. When AI is brought to bear without this context, the organization must re-explain itself in every interaction, and the resulting work suffers — generic, inconsistent, and disconnected from how the organization actually operates.
 >
 > Frames make this context explicit, portable, inheritable, and shareable. A Frame is read by humans, applied by Cogs, and exchanged across organizational boundaries when appropriate. Frames are first-class artifacts: they live independently of Cogs and Progs and can be authored, discovered, sold, and inherited on their own.
 >

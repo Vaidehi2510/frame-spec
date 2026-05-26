@@ -141,7 +141,7 @@ This is the problem that Frames, Cogs, and Ops solve together. They form a layer
 
 ## **4.2  Frames — Shared Cultural Alignment**
 
-A Frame is a scoped, text-based artifact — a file or folder of files using an open protocol — that carries the cultural and operational context within which work happens. Every organization has implicit context: brand voice, technical terminology, regulatory constraints, departmental conventions, team norms, project goals. Today, this lives in style guides, wikis, Slack history, onboarding documents, and the heads of senior employees. When AI is brought to bear without this context, the organization must re-explain itself in every interaction, and the resulting work suffers — generic, inconsistent, and disconnected from how the organization actually operates.
+A Frame is a scoped, text-based artifact — a file or folder of files using an open spec — that carries the cultural and operational context within which work happens. Every organization has implicit context: brand voice, technical terminology, regulatory constraints, departmental conventions, team norms, project goals. Today, this lives in style guides, wikis, Slack history, onboarding documents, and the heads of senior employees. When AI is brought to bear without this context, the organization must re-explain itself in every interaction, and the resulting work suffers — generic, inconsistent, and disconnected from how the organization actually operates.
 
 Frames make this context explicit, portable, inheritable, nestable, and shareable. A Frame is read by humans, applied by Cogs, and portions exchanged across organizational boundaries when appropriate. Frames are first-class artifacts: they live independently of Cogs and Ops and can be authored, discovered, exchanged, and inherited on their own.
 
@@ -209,7 +209,7 @@ Beyond the architectural definition, Frames can address specific human alignment
 
 These five use cases share a pattern. Each begins with a coordination problem that scales painfully — internally, across ecosystems, externally. Each is currently addressed (when at all) through ad-hoc documents, repeated meetings, and the slow propagation of tribal knowledge. Each is solved cleanly by a Frame: a single, versioned, inherited, shareable artifact that carries the right context wherever it needs to go. This is what we mean when we say Frames are infrastructure for organizational alignment.
 
-The Frame protocol — an open specification for how these artifacts are structured — is the standard that makes this exchange possible. Just as Nebari standardizes infrastructure and Nebi standardizes packaging, the Frame protocol and concept standardizes cultural alignment. Together they form the open foundation on which the entire distributed AI economy is built.
+The Frame spec — an open specification for how these artifacts are structured — is the standard that makes this exchange possible. Just as Nebari standardizes infrastructure and Nebi standardizes packaging, the Frame spec and concept standardizes cultural alignment. Together they form the open foundation on which the entire distributed AI economy is built.
 
 ## **4.3  Cogs — AI Workers Oriented by Frames**
 
@@ -285,7 +285,7 @@ The marketplace is built around three classes of exchanged artifact, each with i
 
 This is a key architectural decision of the OpenTeams vision. Rather than building the ecosystem and marketplace around a single class of artifact — say, just Ops, or just models — OpenTeams builds the marketplace around the three classes that actually constitute an AI economy: the work, the workers, and the context that orients them. Each class has its own publishers, its own audience, and its own dynamics.
 
-The Frame side of the economy is primarily about coordination and shared abstraction, not transaction. Communities of practice publish Frames so members can align on terminology and methods. Industry consortia publish Frames that encode best practices. Open-source ecosystems publish Frames that make it easy to adopt their tools and conventions. Within organizations, departments and teams publish Frames so that work flows consistently across people, partners, and AI systems. The marketplace is where this sharing happens at scale — most of it free, some of it commercial, all of it organized around the open Frame protocol.
+The Frame side of the economy is primarily about coordination and shared abstraction, not transaction. Communities of practice publish Frames so members can align on terminology and methods. Industry consortia publish Frames that encode best practices. Open-source ecosystems publish Frames that make it easy to adopt their tools and conventions. Within organizations, departments and teams publish Frames so that work flows consistently across people, partners, and AI systems. The marketplace is where this sharing happens at scale — most of it free, some of it commercial, all of it organized around the open Frame spec.
 
 ## **5.2  The Network Flywheel**
 
@@ -312,7 +312,7 @@ This is the economic architecture that differentiates OpenTeams from pure infras
 | Communities & Consortia | Publish open Frames that codify shared methodologies, vocabularies, and standards for their domain | Member alignment; ecosystem cohesion; influence on industry direction |
 | Consultancies & Agencies | Publish methodology Frames — most as open community contributions, some as commercial offerings | Brand recognition; client adoption of shared methods; optional revenue from commercial Frames |
 | System Integrators | Deploy and customize Hubs; build bespoke Ops and Frames | Services revenue; recurring relationships |
-| Open-Source Contributors | Extend Nebari, Nebi, and the Frame protocol as well as Cog and Op standards stored in Nebari. | Reputation; ecosystem participation; influence over the standard |
+| Open-Source Contributors | Extend Nebari, Nebi, and the Frame spec as well as Cog and Op standards stored in Nebari. | Reputation; ecosystem participation; influence over the standard |
 
 # **6\.  The Gateway: The Intelligence Hub Desktop Application**
 
@@ -426,7 +426,7 @@ The Desktop Application is built as a cross-platform native application (macOS, 
 
 ## **7.1  Nebari as the Trust Foundation**
 
-The Intelligence Hub marketplace only works if participants trust that an Op installed in one Hub will behave the same way in another, that a Frame inherited by one Cog will be interpreted the same way by another, and that the protocols on which all of this depends are stable and open. That trust is grounded in Nebari. Because Nebari is open-source, its specification is publicly auditable including the definitions and patterns exposed as Frame, Cogs, and Ops.  While Nebari is initially company backed so that it can be nurtured and improved with a focused approach, it is desired that it become a community-governed standard so that multiple stakeholders can contribute to its development. This is the same dynamic that made Python the universal language for AI.  The openness amplifies the trust that proprietary alternatives can struggle to provide..
+The Intelligence Hub marketplace only works if participants trust that an Op installed in one Hub will behave the same way in another, that a Frame inherited by one Cog will be interpreted the same way by another, and that the specs on which all of this depends are stable and open. That trust is grounded in Nebari. Because Nebari is open-source, its specification is publicly auditable including the definitions and patterns exposed as Frame, Cogs, and Ops.  While Nebari is initially company backed so that it can be nurtured and improved with a focused approach, it is desired that it become a community-governed standard so that multiple stakeholders can contribute to its development. This is the same dynamic that made Python the universal language for AI.  The openness amplifies the trust that proprietary alternatives can struggle to provide..
 
 Nebari's open-source nature also creates an important flywheel for the marketplace itself. As more organizations deploy Intelligence Hubs using components of Nebari, the standard becomes more deeply entrenched. Frame, Cog, and Op publishers gain access to every Hub in the network. The standard's adoption is self-reinforcing, and OpenTeams — as the primary steward and commercial entity behind Nebari — captures some of the value of those network effect through enterprise services, marketplace fees, and direct ecosystem participation with our own Cogs and Ops.
 
@@ -454,7 +454,7 @@ The combination of Nebari, Intelligence Hubs, Frames, Cogs, Ops, and the Desktop
 | :---- | :---- | :---- |
 | Foundation Model Providers (OpenAI, Anthropic, Google) | Powerful models via API | Infrastructure standard; execution layer; portable context (Frames); marketplace; sovereignty |
 | Cloud AI Platforms (AWS SageMaker, Azure ML) | Managed model deployment | Open standard; Frame-based context portability; Op/Cog ecosystem; marketplace; desktop experience |
-| Agent Frameworks (LangChain, AutoGen) | Agent orchestration libraries | Infrastructure; governance; installable packages; enterprise trust; context-sharing protocol |
+| Agent Frameworks (LangChain, AutoGen) | Agent orchestration libraries | Infrastructure; governance; installable packages; enterprise trust; context-sharing spec |
 | Enterprise Software Vendors (Salesforce, ServiceNow) | Vertical AI features | Open standard; extensibility; cross-domain Frame/Op marketplace; sovereign deployment |
 | OpenTeams \+ Nebari | All three layers: infra \+ execution (with Frames, Cogs, Ops) \+ economy | — |
 
@@ -464,7 +464,7 @@ The most defensible moat in this architecture is the compounding of three reinfo
 
 | Phase | Focus | Key Milestones |
 | :---- | :---- | :---- |
-| Phase 1(Now – 6 months) | Infrastructure \+ Execution foundation | Nebari Hub deployment hardened; Nebi packaging standard defined; Frame protocol v1 published; first Ops, Cogs, and Frames built; Desktop Application alpha released |
+| Phase 1(Now – 6 months) | Infrastructure \+ Execution foundation | Nebari Hub deployment hardened; Nebi packaging standard defined; Frame spec v1 published; first Ops, Cogs, and Frames built; Desktop Application alpha released |
 | Phase 2(6 – 18 months) | Marketplace emergence | Public marketplace live for Frames, Cogs, and Ops; 50+ Ops and 100+ Frames available; Desktop Application general availability; first vertical ecosystems (health, energy, legal) |
 | Phase 3(18 – 36 months) | Network effects \+ ecosystem | 1,000+ deployed Hubs; 500+ Ops and 2,000+ Frames; consultancies, communities of practice, and domain experts actively publishing Frames for shared alignment; Applied AI Society credentialing; international Hub networks |
 

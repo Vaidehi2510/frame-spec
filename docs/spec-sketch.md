@@ -1,10 +1,10 @@
-# Protocol Sketch
+# Spec Sketch
 
 This document describes a first draft shape for Frame artifacts and the packages that may carry them.
 
 It is a working sketch, not yet a finalized specification.
 
-## Protocol Goals
+## Spec Goals
 
 The first version should optimize for:
 
@@ -26,7 +26,7 @@ It should not yet optimize for:
 
 ## Conceptual Layers
 
-The protocol currently assumes five layers.
+The spec currently assumes five layers.
 
 ### 1. Frame
 
@@ -96,7 +96,7 @@ A Frame may be represented as:
 - a single structured file
 - a folder of files with one main manifest
 
-The protocol should allow both, though the examples below use a folder of files.
+The spec should allow both, though the examples below use a folder of files.
 
 ## Suggested Package Layout
 
@@ -123,7 +123,7 @@ Interpretation:
 ## Package Manifest Draft
 
 ```yaml
-protocol_version: "0.1"
+spec_version: "0.1"
 package_id: "acme.operating-frame"
 package_version: "0.1.0"
 package_name: "Acme Operating Frame"
@@ -242,7 +242,7 @@ That means a consumer should be able to tell, from the artifact itself:
 - whether it should be treated as official, local, partner-provided, or forked
 - what lineage it has
 
-The protocol should therefore carry a structured identity block with fields such as:
+The spec should therefore carry a structured identity block with fields such as:
 
 - `frame_id`
 - `version`
@@ -261,7 +261,7 @@ Suggested semantics:
 - `authority.status` expresses whether the artifact claims to be `official`, `community`, `partner`, `fork`, `local`, or `deprecated`
 - `lineage` preserves derivation when a Frame is exported, adapted, or forked
 
-This should be treated as protocol metadata, not as an implementation-specific registry lookup.
+This should be treated as spec metadata, not as an implementation-specific registry lookup.
 
 External systems may still maintain indexes, caches, and assignment graphs, but those should complement rather than replace artifact-local identity metadata.
 
@@ -347,7 +347,7 @@ Both are needed when the same Frame may be copied, exported, forked, mirrored, o
 
 ## YAML As Current Default
 
-YAML is the current default because it fits the protocol's current goals:
+YAML is the current default because it fits the spec's current goals:
 
 - easy human review
 - straightforward nesting
