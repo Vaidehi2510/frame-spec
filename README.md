@@ -12,15 +12,22 @@ They are intended to be:
 
 This repository seed is a standalone starting point for the Frame spec as its own project.
 
-## Start Here
+## Adopt Now
+
+- Read [spec/v0.1.md](spec/v0.1.md) for the current minimum adopt-now spec.
+- Review [examples/v0.1-minimal/README.md](examples/v0.1-minimal/README.md) for a concrete minimal example.
+
+## Background
 
 - Read [docs/overview.md](docs/overview.md) for the concept and current working definition.
 - Read [docs/design-note.md](docs/design-note.md) for the problem framing and open questions.
-- Read [docs/spec-sketch.md](docs/spec-sketch.md) for the draft spec shape.
-- Read [docs/nebi-integration.md](docs/nebi-integration.md) for one possible Nebi-based packaging and delivery model.
+
+## Discussion And Future Work
+
+- Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
+- Read [docs/spec-and-implementation.md](docs/spec-and-implementation.md) for the boundary between the Frame spec and the systems that realize Frames.
 - Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later spec alignment notes.
-- Read [docs/v1-gap-analysis.md](docs/v1-gap-analysis.md) for a concrete gap list between the current draft and the Intelligence Hub whitepaper assumptions.
-- Review [examples/self-frame/README.md](examples/self-frame/README.md) for a concrete self-referential example.
+- Review [examples/self-frame/README.md](examples/self-frame/README.md) and [examples/nebi-frame-package/README.md](examples/nebi-frame-package/README.md) for richer future-oriented examples.
 
 ## Repository Layout
 
@@ -28,13 +35,18 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 docs/
   overview.md
   design-note.md
+  future-directions.md
+  spec-and-implementation.md
   spec-sketch.md
   nebi-integration.md
   desktop-sharing.md
   v1-gap-analysis.md
+  canonical-identity-proposal.md
 spec/
   README.md
+  v0.1.md
 examples/
+  v0.1-minimal/
   self-frame/
   nebi-frame-package/
 references/
@@ -49,17 +61,19 @@ This is still an early draft.
 What exists now:
 
 - a working concept and definition for Frames
+- a small `v0.1` spec that can be adopted immediately
 - a design note describing the problem and direction
-- a spec sketch for Frame package and document structure
+- future-oriented spec discussion documents
 - a Nebi integration illustration
 - concrete example Frame packages
 
-What does not exist yet:
+What is intentionally not required for `v0.1`:
 
 - a finalized schema
 - a finalized Nebi contract
 - a built-in Desktop sharing implementation
 - settled governance for publication and discovery
+- a standardized management or layering system
 
 ## Working Position On Nebi
 

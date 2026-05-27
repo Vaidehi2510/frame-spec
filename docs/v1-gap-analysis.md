@@ -1,5 +1,9 @@
 # Frame Spec V1 Gap Analysis
 
+This document is future-facing.
+
+It is meant to inform later versions of the spec after `v0.1`, not to define the minimum adopt-now format.
+
 ## Purpose
 
 This note translates the alignment review against [Intelligence Hub Whitepaper - v4.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) into a concrete spec-focused gap list for `frame-spec v1`.

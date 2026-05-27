@@ -1,5 +1,9 @@
 # Canonical Identity Proposal
 
+This document is a future proposal for later spec versions.
+
+It is not part of the minimum `v0.1` definition.
+
 ## Purpose
 
 This note proposes an exact `v1` shape for canonical identity and authoritative-source metadata in the Frame spec.

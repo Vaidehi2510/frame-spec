@@ -1,5 +1,9 @@
 # Spec Sketch
 
+This document is a future-facing sketch, not the current adopt-now spec.
+
+For immediate use, see [../spec/v0.1.md](../spec/v0.1.md).
+
 This document describes a first draft shape for Frame artifacts and the packages that may carry them.
 
 It is a working sketch, not yet a finalized specification.
