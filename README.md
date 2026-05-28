@@ -17,6 +17,7 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 - Read [spec/v0.1.md](spec/v0.1.md) for the current minimum adopt-now spec.
 - Review [examples/v0.1-minimal/README.md](examples/v0.1-minimal/README.md) for a concrete minimal example.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1` Frame Markdown.
+- Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
 
 ## Tools And Aids
@@ -62,6 +63,8 @@ docs/
 tools/
   README.md
   frame-builder.html
+  frame-authoring-assistant-prompt.md
+  frame-authoring-assistant/
 share/
   frame-builder-kit/
 spec/

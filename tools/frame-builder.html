@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame Builder</title>
+    <style>
+      :root {
+        --bg: #f6f1e8;
+        --panel: #fffaf2;
+        --ink: #1d1a16;
+        --muted: #6b645c;
+        --line: #d7cbb9;
+        --accent: #0f766e;
+        --accent-strong: #115e59;
+        --accent-soft: #d8f0ed;
+        --warn: #7c2d12;
+        --shadow: 0 20px 40px rgba(29, 26, 22, 0.08);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 24%),
+          linear-gradient(180deg, #fcf8f1 0%, var(--bg) 100%);
+      }
+
+      .page {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .hero {
+        margin-bottom: 24px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent-strong);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 14px 0 10px;
+        font-size: clamp(2.1rem, 4vw, 3.5rem);
+        line-height: 0.95;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(320px, 540px) minmax(320px, 1fr);
+        gap: 20px;
+        align-items: start;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid rgba(215, 203, 185, 0.9);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .panel-inner {
+        padding: 20px;
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+      }
+
+      .panel .intro {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .coach-note {
+        margin: 0 0 18px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: #f5fbfa;
+        border: 1px solid #cde7e4;
+        color: var(--accent-strong);
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+
+      .stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+      }
+
+      label {
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .hint {
+        color: var(--muted);
+        font-size: 0.83rem;
+        line-height: 1.45;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        font: inherit;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px 14px;
+        background: #fffdf9;
+        color: var(--ink);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid rgba(15, 118, 110, 0.2);
+        border-color: var(--accent);
+      }
+
+      textarea {
+        min-height: 96px;
+        resize: vertical;
+      }
+
+      .metadata-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .metadata-grid .wide {
+        grid-column: 1 / -1;
+      }
+
+      .section-card {
+        border: 1px solid rgba(215, 203, 185, 0.85);
+        border-radius: 14px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.65);
+      }
+
+      .section-card h3 {
+        margin: 0 0 4px;
+        font-size: 1rem;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 14px;
+        cursor: pointer;
+      }
+
+      .primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .primary:hover {
+        background: var(--accent-strong);
+      }
+
+      .secondary {
+        background: white;
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+
+      .secondary:hover {
+        background: #f7f2e9;
+      }
+
+      .status {
+        min-height: 20px;
+        margin-top: 12px;
+        color: var(--accent-strong);
+        font-size: 0.9rem;
+      }
+
+      .status.warn {
+        color: var(--warn);
+      }
+
+      .preview-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: start;
+      }
+
+      .preview-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .preview-meta {
+        margin: 16px 0 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: #f5fbfa;
+        border: 1px solid #cde7e4;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .output {
+        width: 100%;
+        min-height: 780px;
+        margin-top: 16px;
+        white-space: pre;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        background: #fffdf9;
+      }
+
+      @media (max-width: 980px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .metadata-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <span class="eyebrow">Frame Spec v0.1</span>
+        <h1>Frame Builder</h1>
+        <p>
+          Build a valid <code>type: frame</code> Markdown document for non-technical users.
+          This builder keeps the authored artifact simple while giving implementations one clear
+          hook for detecting and handling a Frame.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel">
+          <div class="panel-inner">
+            <h2>Authoring Form</h2>
+            <p class="intro">
+              Fill in the required metadata first, then add as many or as few optional sections as
+              help you capture how someone should work in this context. For list-style section
+              fields below, use one line per item.
+            </p>
+            <p class="coach-note">
+              What are the things that you would teach a new employee about how you want them to
+              work?
+            </p>
+
+            <div class="stack">
+              <div class="section-card">
+                <h3>Required Metadata</h3>
+                <div class="metadata-grid">
+                  <div class="wide field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" value="" placeholder="Ex: Customer Onboarding Frame" />
+                  </div>
+
+                  <div class="wide field">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="What is this Frame for, and when should someone use it?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="visibility">Visibility</label>
+                    <select id="visibility">
+                      <option value="private">private</option>
+                      <option value="internal" selected>internal</option>
+                      <option value="shared">shared</option>
+                      <option value="public">public</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="scope">Scope</label>
+                    <select id="scope">
+                      <option value="" selected></option>
+                      <option value="company">company</option>
+                      <option value="department">department</option>
+                      <option value="project">project</option>
+                      <option value="partner">partner</option>
+                      <option value="personal">personal</option>
+                    </select>
+                    <div class="hint">Optional convenience field. Use it only if the scope is helpful to state.</div>
+                  </div>
+
+                  <div class="wide field">
+                    <label for="author">Author</label>
+                    <input id="author" type="text" value="" placeholder="Person, team, or organization" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-card">
+                <h3>Body Sections</h3>
+                <p class="hint">
+                  These are optional scaffolds, not a required template. The builder will only
+                  include sections that have content.
+                </p>
+                <div class="stack">
+                  <div class="field">
+                    <label for="goals">Goals</label>
+                    <textarea id="goals" placeholder="What outcomes matter most?
+What does good work look like here?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="terminology">Terminology</label>
+                    <textarea id="terminology" placeholder="What words, phrases, or definitions matter in this context?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="rules">Rules</label>
+                    <textarea id="rules" placeholder="What should people always do or avoid doing?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="style">Style</label>
+                    <textarea id="style" placeholder="How should the work sound, look, or be presented?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="norms">Norms</label>
+                    <textarea id="norms" placeholder="What are the habits or expectations that help work go well?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="skills">Relevant Skills</label>
+                    <textarea id="skills" placeholder="What capabilities or areas of expertise are expected?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="process">Business Process Notes</label>
+                    <textarea id="process" placeholder="What steps, checkpoints, or workflows should someone know?"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="customMarkdown">Additional Markdown</label>
+                    <textarea id="customMarkdown" placeholder="Any other freeform notes, examples, or guidance you want to include."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="preview-head">
+              <div>
+                <h2>Generated Frame</h2>
+                <p class="intro">
+                  This is the exact Markdown the app will copy or download.
+                </p>
+              </div>
+              <div class="preview-actions">
+                <button class="primary" id="copyButton" type="button">Copy Markdown</button>
+                <button class="secondary" id="downloadButton" type="button">Download frame.md</button>
+                <button class="secondary" id="loadExampleButton" type="button">Load Example</button>
+              </div>
+            </div>
+
+            <div class="preview-meta">
+              Required frontmatter is generated automatically, including
+              <code>type: frame</code>. The output is intended to match the current
+              Frame Spec v0.1 format.
+            </div>
+
+            <textarea id="output" class="output" readonly></textarea>
+            <div id="status" class="status"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const fields = {
+        name: document.getElementById("name"),
+        description: document.getElementById("description"),
+        visibility: document.getElementById("visibility"),
+        scope: document.getElementById("scope"),
+        author: document.getElementById("author"),
+        goals: document.getElementById("goals"),
+        terminology: document.getElementById("terminology"),
+        rules: document.getElementById("rules"),
+        style: document.getElementById("style"),
+        norms: document.getElementById("norms"),
+        skills: document.getElementById("skills"),
+        process: document.getElementById("process"),
+        customMarkdown: document.getElementById("customMarkdown"),
+      };
+
+      const output = document.getElementById("output");
+      const status = document.getElementById("status");
+      const copyButton = document.getElementById("copyButton");
+      const downloadButton = document.getElementById("downloadButton");
+      const loadExampleButton = document.getElementById("loadExampleButton");
+
+      const defaults = Object.fromEntries(
+        Object.entries(fields).map(([key, element]) => [key, element.value]),
+      );
+
+      const exampleValues = {
+        name: "OpenTeams Brand Voice",
+        description: "Shared guidance for how OpenTeams communicates in external-facing writing.",
+        visibility: "internal",
+        scope: "company",
+        author: "marketing",
+        goals: `Be clear, direct, and credible.
+Avoid hype when describing technical capabilities.`,
+        terminology: `Prefer "Frame" over "alignment file".
+Prefer "spec" over "protocol".`,
+        rules: "",
+        style: `Use calm, explanatory language.
+Make important assumptions explicit.
+Prefer plain explanation over jargon when possible.`,
+        norms: "",
+        skills: "",
+        process: "",
+        customMarkdown: "",
+      };
+
+      function yamlValue(value) {
+        const normalized = String(value ?? "").replace(/\r\n/g, "\n").trim();
+        const escaped = normalized.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+        return `"${escaped}"`;
+      }
+
+      function listFromTextarea(text) {
+        return String(text ?? "")
+          .split(/\r?\n/)
+          .map((line) => line.trim())
+          .filter(Boolean)
+          .map((line) => `- ${line}`);
+      }
+
+      function sectionBlock(title, text) {
+        const lines = listFromTextarea(text);
+        if (!lines.length) {
+          return "";
+        }
+
+        return `## ${title}\n\n${lines.join("\n")}`;
+      }
+
+      function buildFrame() {
+        const name = fields.name.value.trim() || "Untitled Frame";
+        const description = fields.description.value.trim();
+        const visibility = fields.visibility.value.trim();
+        const scope = fields.scope.value.trim();
+        const author = fields.author.value.trim();
+
+        const frontmatter = [
+          "---",
+          "type: frame",
+          `name: ${yamlValue(name)}`,
+          `description: ${yamlValue(description)}`,
+          `visibility: ${visibility || "internal"}`,
+        ];
+
+        if (scope) {
+          frontmatter.push(`scope: ${scope}`);
+        }
+
+        if (author) {
+          frontmatter.push(`author: ${yamlValue(author)}`);
+        }
+
+        frontmatter.push("---");
+
+        const bodyBlocks = [
+          `# ${name}`,
+          sectionBlock("Goals", fields.goals.value),
+          sectionBlock("Terminology", fields.terminology.value),
+          sectionBlock("Rules", fields.rules.value),
+          sectionBlock("Style", fields.style.value),
+          sectionBlock("Norms", fields.norms.value),
+          sectionBlock("Relevant Skills", fields.skills.value),
+          sectionBlock("Business Process Notes", fields.process.value),
+          fields.customMarkdown.value.trim(),
+        ].filter(Boolean);
+
+        return `${frontmatter.join("\n")}\n\n${bodyBlocks.join("\n\n")}\n`;
+      }
+
+      function updateOutput() {
+        output.value = buildFrame();
+        status.textContent = "";
+        status.className = "status";
+      }
+
+      function slugify(value) {
+        const slug = value
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
+        return slug || "frame";
+      }
+
+      async function copyMarkdown() {
+        updateOutput();
+
+        try {
+          await navigator.clipboard.writeText(output.value);
+          status.textContent = "Markdown copied to clipboard.";
+          status.className = "status";
+        } catch (error) {
+          output.focus();
+          output.select();
+          status.textContent = "Clipboard access was not available. The text has been selected for manual copy.";
+          status.className = "status warn";
+        }
+      }
+
+      function downloadMarkdown() {
+        updateOutput();
+
+        const fileName = `${slugify(fields.name.value)}.md`;
+        const blob = new Blob([output.value], { type: "text/markdown;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = fileName;
+        anchor.click();
+        URL.revokeObjectURL(url);
+
+        status.textContent = `Downloaded ${fileName}.`;
+        status.className = "status";
+      }
+
+      function loadExample() {
+        Object.entries(exampleValues).forEach(([key, value]) => {
+          fields[key].value = value;
+        });
+
+        updateOutput();
+        status.textContent = "Example content loaded.";
+        status.className = "status";
+      }
+
+      Object.values(fields).forEach((element) => {
+        element.addEventListener("input", updateOutput);
+        element.addEventListener("change", updateOutput);
+      });
+
+      copyButton.addEventListener("click", copyMarkdown);
+      downloadButton.addEventListener("click", downloadMarkdown);
+      loadExampleButton.addEventListener("click", loadExample);
+
+      updateOutput();
+    </script>
+  </body>
+</html>

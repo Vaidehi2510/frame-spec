@@ -42,7 +42,6 @@ site/
 
 # Generated documentation artifacts
 *.pdf
-*.html
 
 # Test / coverage artifacts
 .coverage
