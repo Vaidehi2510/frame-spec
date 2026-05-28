@@ -16,6 +16,22 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 
 - Read [spec/v0.1.md](spec/v0.1.md) for the current minimum adopt-now spec.
 - Review [examples/v0.1-minimal/README.md](examples/v0.1-minimal/README.md) for a concrete minimal example.
+- Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1` Frame Markdown.
+- Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
+
+## Tools And Aids
+
+This repo can include lightweight, spec-adjacent aids such as:
+
+- offline builders
+- prompt templates
+- small authoring or validation skills
+- lint and validation tools
+- sample authoring workflows
+
+These aids help people create or verify Frames. They do not define the full runtime or management system for Frames.
+
+For the current boundary, read [docs/tools-and-aids.md](docs/tools-and-aids.md).
 
 ## Background
 
@@ -35,6 +51,7 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 docs/
   overview.md
   design-note.md
+  tools-and-aids.md
   future-directions.md
   spec-and-implementation.md
   spec-sketch.md
@@ -42,6 +59,11 @@ docs/
   desktop-sharing.md
   v1-gap-analysis.md
   canonical-identity-proposal.md
+tools/
+  README.md
+  frame-builder.html
+share/
+  frame-builder-kit/
 spec/
   README.md
   v0.1.md
