@@ -15,8 +15,10 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 ## Adopt Now
 
 - Read [spec/v0.1.md](spec/v0.1.md) for the current minimum adopt-now spec.
+- Read [docs/how-to-use-frames.md](docs/how-to-use-frames.md) for practical guidance on using Frames in everyday AI work.
 - Review [examples/v0.1-minimal/README.md](examples/v0.1-minimal/README.md) for a concrete minimal example.
 - Review [examples/v0.1-self-frame/README.md](examples/v0.1-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
+- Review [examples/v0.1-spec-stewardship-frame/README.md](examples/v0.1-spec-stewardship-frame/README.md) for a `v0.1` Frame that captures stewardship norms for evolving the spec.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1` Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
@@ -43,6 +45,7 @@ For the current boundary, read [docs/tools-and-aids.md](docs/tools-and-aids.md).
 ## Discussion And Future Work
 
 - Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
+- Read [docs/spec-enhancement-process.md](docs/spec-enhancement-process.md) for a proposed lightweight process that separates exploratory ideas from active spec proposals.
 - Read [docs/spec-and-implementation.md](docs/spec-and-implementation.md) for the boundary between the Frame spec and the systems that realize Frames.
 - Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later spec alignment notes.
 - Review [examples/self-frame/README.md](examples/self-frame/README.md) and [examples/nebi-frame-package/README.md](examples/nebi-frame-package/README.md) for richer future-oriented examples.
@@ -66,6 +69,7 @@ tools/
   frame-builder.html
   frame-authoring-assistant-prompt.md
   frame-authoring-assistant/
+  frame-reader/
 share/
   frame-builder-kit/
 spec/
@@ -74,6 +78,7 @@ spec/
 examples/
   v0.1-minimal/
   v0.1-self-frame/
+  v0.1-spec-stewardship-frame/
   self-frame/
   nebi-frame-package/
 references/

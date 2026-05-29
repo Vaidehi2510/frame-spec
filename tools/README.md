@@ -1,6 +1,6 @@
 # Tools
 
-This directory contains lightweight tools and aids for authoring `v0.1` Frames.
+This directory contains lightweight tools and aids for authoring and using `v0.1` Frames.
 
 ## Frame Builder
 
@@ -31,3 +31,11 @@ This directory also includes lightweight AI authoring aids:
 - [frame-authoring-assistant/SKILL.md](frame-authoring-assistant/SKILL.md): a reusable skill for AI-assisted Frame interviews and drafting
 
 These are meant for people who would rather talk through a Frame than build it from scratch in the form.
+
+## AI-Guided Use
+
+This directory also includes a lightweight usage aid:
+
+- [frame-reader/SKILL.md](frame-reader/SKILL.md): a reusable skill for reading one or more Frames, determining which are active for a task, and applying them consistently
+
+This is meant to help ordinary AI tools use Frames more reliably without requiring a dedicated runtime.
