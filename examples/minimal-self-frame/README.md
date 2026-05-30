@@ -1,6 +1,6 @@
-# v0.1 Self Frame Example
+# v0.1.1 Self Frame Example
 
-This example applies the minimal `v0.1` spec to the Frame spec itself.
+This example applies the minimal `v0.1.1` spec to the Frame spec itself.
 
 It is intentionally self-referential:
 

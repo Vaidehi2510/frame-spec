@@ -14,10 +14,10 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 
 ## Adopt Now
 
-- Read [spec/v0.1.md](spec/v0.1.md) for the current minimum adopt-now spec.
-- Review [examples/v0.1-minimal/README.md](examples/v0.1-minimal/README.md) for a concrete minimal example.
-- Review [examples/v0.1-self-frame/README.md](examples/v0.1-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
-- Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1` Frame Markdown.
+- Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
+- Review [examples/minimal/README.md](examples/minimal/README.md) for a concrete minimal example.
+- Review [examples/minimal-self-frame/README.md](examples/minimal-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
+- Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
 
@@ -70,10 +70,11 @@ share/
   frame-builder-kit/
 spec/
   README.md
-  v0.1.md
+  frame-spec.md
 examples/
-  v0.1-minimal/
-  v0.1-self-frame/
+  minimal/
+  minimal-self-frame/
+  OT-FIR-program.md
   self-frame/
   nebi-frame-package/
 references/
@@ -88,13 +89,13 @@ This is still an early draft.
 What exists now:
 
 - a working concept and definition for Frames
-- a small `v0.1` spec that can be adopted immediately
+- a small spec that can be adopted immediately (currently `v0.1.1`)
 - a design note describing the problem and direction
 - future-oriented spec discussion documents
 - a Nebi integration illustration
 - concrete example Frame packages
 
-What is intentionally not required for `v0.1`:
+What is intentionally not required for the current spec:
 
 - a finalized schema
 - a finalized Nebi contract

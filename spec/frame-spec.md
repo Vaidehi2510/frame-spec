@@ -1,18 +1,18 @@
-# Frame Spec v0.1
+# Frame Spec v0.1.1
 
 ## Purpose
 
 This is the smallest adopt-now definition of a Frame.
 
-The goal of `v0.1` is immediate use, not completeness.
+The goal of `v0.1.1` is immediate use, not completeness.
 
-If someone can write a Frame today, send it to another person by email, chat, or git, and that person can read and use it, then `v0.1` is doing its job.
+If someone can write a Frame today, send it to another person by email, chat, or git, and that person can read and use it, then `v0.1.1` is doing its job.
 
 ## Definition
 
 A Frame is a scoped, text-based artifact that carries cultural and operational context for work.
 
-In `v0.1`, a Frame should be:
+In `v0.1.1`, a Frame should be:
 
 - a Markdown file
 - human-readable
@@ -21,14 +21,14 @@ In `v0.1`, a Frame should be:
 
 ## File Format
 
-The preferred `v0.1` format is:
+The preferred `v0.1.1` format is:
 
 - Markdown body
 - YAML frontmatter at the top
 
 This intentionally follows the general shape that Skills already use, without requiring the full Skills standard to define what a Frame is.
 
-In `v0.1`, the canonical form is a single Markdown file.
+In `v0.1.1`, the canonical form is a single Markdown file.
 
 Future versions may also support a directory form with a canonical entry file such as `frame.md` plus optional supporting assets.
 
@@ -36,9 +36,10 @@ That future directory shape is intentionally left open for later, since it is mo
 
 ## Required Fields
 
-Every `v0.1` Frame should have:
+Every `v0.1.1` Frame should have:
 
 - `type`
+- `version`
 - `name`
 - `description`
 - `visibility`
@@ -51,7 +52,23 @@ This must be:
 type: frame
 ```
 
-This is the minimal explicit hook that tells an AI system or surrounding implementation that the file is intended to be handled as a Frame rather than as generic Markdown.
+or, to specify which version of the Frame Spec the Frame conforms to:
+
+```yaml
+type: frame [0.1.1]
+```
+
+This is the minimal explicit hook that tells an AI system or surrounding implementation that the file is intended to be handled as a Frame rather than as generic Markdown. The bracketed spec version is optional but recommended.
+
+### `version`
+
+The current version of this Frame.
+
+```yaml
+version: 0.1.0
+```
+
+This tracks the Frame's own revision history, not the spec version. Authors should update this when the content of the Frame changes.
 
 ### `name`
 
@@ -72,7 +89,7 @@ Suggested values:
 
 ## Recommended Fields
 
-These are not required in `v0.1`, but they are encouraged:
+These are not required in `v0.1.1`, but they are encouraged:
 
 - `scope`
 - `author`
@@ -89,7 +106,7 @@ Examples:
 - `partner`
 - `personal`
 
-`v0.1` does not require a formal scope grammar.
+`v0.1.1` does not require a formal scope grammar.
 
 ### `author`
 
@@ -111,13 +128,14 @@ Typical content may include:
 - relevant skills
 - business process notes
 
-`v0.1` does not require a fixed section taxonomy.
+`v0.1.1` does not require a fixed section taxonomy.
 
 ## Minimal Example
 
 ```md
 ---
-type: frame
+type: frame [0.1.1]
+version: 0.1.0
 name: OpenTeams Brand Voice
 description: Shared guidance for how OpenTeams communicates in external-facing writing.
 visibility: internal
@@ -142,9 +160,9 @@ author: marketing
 - Make important assumptions explicit.
 ```
 
-## What v0.1 Does Not Try To Define
+## What v0.1.1 Does Not Try To Define
 
-`v0.1` intentionally does not standardize:
+`v0.1.1` intentionally does not standardize:
 
 - package manifests
 - inheritance semantics
@@ -159,7 +177,7 @@ Those may become part of later versions, but they should not block immediate use
 
 ## Sharing
 
-A `v0.1` Frame may be shared in any ordinary way, including:
+A `v0.1.1` Frame may be shared in any ordinary way, including:
 
 - email
 - chat
@@ -177,7 +195,7 @@ At a minimum, an implementation should be able to:
 3. Read the Markdown body as contextual guidance for work.
 4. Apply that guidance when the Frame is made active by a user or system.
 
-`v0.1` does not require more advanced behavior such as inheritance resolution, formal layering, provenance validation, or canonical-source lookup.
+`v0.1.1` does not require more advanced behavior such as inheritance resolution, formal layering, provenance validation, or canonical-source lookup.
 
 ## Relationship To Future Work
 

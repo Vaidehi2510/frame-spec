@@ -52,7 +52,7 @@ That means the spec may eventually define a small amount of relationship or prec
 
 ## Current Position
 
-For `v0.1`, the repo prioritizes:
+For `v0.1.1`, the repo prioritizes:
 
 - a tiny adopt-now spec
 - manual shareability
