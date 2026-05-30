@@ -14,9 +14,9 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 
 ## Adopt Now
 
-- Read [spec/v0.1.1.md](spec/v0.1.1.md) for the current minimum adopt-now spec.
-- Review [examples/v0.1.1-minimal/README.md](examples/v0.1.1-minimal/README.md) for a concrete minimal example.
-- Review [examples/v0.1.1-self-frame/README.md](examples/v0.1.1-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
+- Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
+- Review [examples/minimal/README.md](examples/minimal/README.md) for a concrete minimal example.
+- Review [examples/minimal-self-frame/README.md](examples/minimal-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1.1` Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
@@ -70,10 +70,10 @@ share/
   frame-builder-kit/
 spec/
   README.md
-  v0.1.1.md
+  frame-spec.md
 examples/
-  v0.1.1-minimal/
-  v0.1.1-self-frame/
+  minimal/
+  minimal-self-frame/
   self-frame/
   nebi-frame-package/
 references/

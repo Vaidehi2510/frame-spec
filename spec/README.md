@@ -4,7 +4,7 @@ This directory contains the current adopt-now spec as well as room for more form
 
 ## Current
 
-- [v0.1.1.md](v0.1.1.md) is the current minimum spec intended for immediate use.
+- [frame-spec.md](frame-spec.md) is the current minimum spec intended for immediate use.
 
 ## Later
 

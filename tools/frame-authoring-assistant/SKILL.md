@@ -7,7 +7,7 @@ description: Use this skill when helping someone create a Frame through conversa
 
 Use this skill to help a person create a useful `v0.1.1` Frame when they are more comfortable talking than filling out the structure directly.
 
-For the exact `v0.1.1` field expectations and examples, read `../../spec/v0.1.1.md`.
+For the exact `v0.1.1` field expectations and examples, read `../../spec/frame-spec.md`.
 
 ## Goal
 

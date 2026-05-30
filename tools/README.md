@@ -19,7 +19,7 @@ The generated output can be:
 - saved as `frame.md`
 - shared by email, chat, or git
 
-This builder is intentionally simple and tracks the current [../spec/v0.1.1.md](../spec/v0.1.1.md) spec.
+This builder is intentionally simple and tracks the current [../spec/frame-spec.md](../spec/frame-spec.md) spec.
 
 It now starts in a guided blank state and lets the user load an example on demand.
 

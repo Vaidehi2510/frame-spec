@@ -6,7 +6,7 @@ These notes are useful for discussion and future design, but they are not requir
 
 ## Current Spec
 
-- [../spec/v0.1.1.md](../spec/v0.1.1.md) is the current adopt-now spec.
+- [../spec/frame-spec.md](../spec/frame-spec.md) is the current adopt-now spec.
 
 ## Background
 
