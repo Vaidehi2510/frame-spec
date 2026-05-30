@@ -1,12 +1,12 @@
 # Future Directions
 
-This document collects the richer ideas that are intentionally outside the immediate `v0.1` spec.
+This document collects the richer ideas that are intentionally outside the immediate `v0.1.1` spec.
 
 These notes are useful for discussion and future design, but they are not required in order to start writing and sharing Frames now.
 
 ## Current Spec
 
-- [../spec/v0.1.md](../spec/v0.1.md) is the current adopt-now spec.
+- [../spec/v0.1.1.md](../spec/v0.1.1.md) is the current adopt-now spec.
 
 ## Background
 
@@ -31,7 +31,7 @@ For this repository, the rough boundary is:
 - the spec defines what a Frame is and what claims it can carry
 - implementation defines how a system discovers, installs, layers, mounts, permissions, and activates Frames
 
-Some future topics, especially layering, may touch both sides. That is one reason they remain discussion topics rather than `v0.1` requirements.
+Some future topics, especially layering, may touch both sides. That is one reason they remain discussion topics rather than `v0.1.1` requirements.
 
 ## Working Principle
 

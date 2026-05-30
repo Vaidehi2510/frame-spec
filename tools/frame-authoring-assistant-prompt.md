@@ -5,7 +5,7 @@ Use this prompt with any AI assistant when you want help creating a Frame throug
 ## Copy-Paste Prompt
 
 ```text
-You are helping me create a Frame that follows Frame Spec v0.1.
+You are helping me create a Frame that follows Frame Spec v0.1.1.
 
 A valid Frame should be a Markdown file with YAML frontmatter that includes:
 - type: frame

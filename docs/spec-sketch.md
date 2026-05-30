@@ -2,7 +2,7 @@
 
 This document is a future-facing sketch, not the current adopt-now spec.
 
-For immediate use, see [../spec/v0.1.md](../spec/v0.1.md).
+For immediate use, see [../spec/v0.1.1.md](../spec/v0.1.1.md).
 
 This document describes a first draft shape for Frame artifacts and the packages that may carry them.
 
@@ -127,7 +127,7 @@ Interpretation:
 ## Package Manifest Draft
 
 ```yaml
-spec_version: "0.1"
+spec_version: "0.1.1"
 package_id: "acme.operating-frame"
 package_version: "0.1.0"
 package_name: "Acme Operating Frame"
@@ -141,7 +141,7 @@ frames:
   - "project.alpha.yaml"
 dependencies:
   - package_id: "common.agent-coordination"
-    version: "^0.1"
+    version: "^0.1.1"
 distribution:
   visibility: "internal"
   exportable_scopes:
