@@ -128,6 +128,8 @@ Typical content may include:
 - relevant skills
 - business process notes
 
+Frames are intended to be loaded as system context for AI assistants, where tokens are at a premium. Authors should keep body content concise: prefer short bullets over long prose, omit boilerplate, and include only the guidance that would actually change how work is done. A Frame that is too long to read quickly is too long to be useful.
+
 `v0.1.1` does not require a fixed section taxonomy.
 
 ## Minimal Example
