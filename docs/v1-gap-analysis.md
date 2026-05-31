@@ -2,7 +2,7 @@
 
 This document is future-facing.
 
-It is meant to inform later versions of the spec after `v0.1.1`, not to define the minimum adopt-now format.
+It is meant to inform later versions of the spec after `v0.2`, not to define the minimum adopt-now format.
 
 ## Purpose
 

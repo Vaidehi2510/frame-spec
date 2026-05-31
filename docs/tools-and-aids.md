@@ -11,7 +11,7 @@ Examples of tools and aids that fit here:
 - simple offline builders that generate valid `frame.md` files
 - prompt templates that help people draft Frames
 - small skills that interview, rewrite, or validate Frames
-- validation and lint-style tools for `v0.1.1` and later spec versions
+- validation and lint-style tools for `v0.2` and later spec versions
 - sample inputs and outputs for authoring workflows
 - tiny conversion helpers that turn guided input into spec-compliant Frames
 

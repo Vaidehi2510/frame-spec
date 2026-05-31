@@ -1,6 +1,6 @@
 # Tools
 
-This directory contains lightweight tools and aids for authoring `v0.1.1` Frames.
+This directory contains lightweight tools and aids for authoring `v0.2` Frames.
 
 ## Frame Builder
 
@@ -9,7 +9,7 @@ Open [frame-builder.html](frame-builder.html) in a browser.
 The builder helps non-technical users produce:
 
 - valid `type: frame` frontmatter
-- the required `v0.1.1` metadata fields
+- the required `v0.2` metadata fields
 - a Markdown body using common Frame sections
 - a broader range of Frames than just style or brand examples
 

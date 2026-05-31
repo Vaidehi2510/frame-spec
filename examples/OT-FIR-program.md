@@ -1,5 +1,5 @@
 ---
-type: frame [0.1.1]
+type: frame [0.2]
 version: 0.1
 name: OpenTeams Founder-in-Residence Program
 description: Context, principles, and operating guidance for creating aligned founder-led companies from OpenTeams employees, former employees, contractors, and close collaborators.

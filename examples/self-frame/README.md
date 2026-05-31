@@ -9,4 +9,4 @@ It is intentionally self-referential:
 
 The goal is to make the draft concrete enough to inspect and critique.
 
-It is not the minimum `v0.1.1` adopt-now example.
+It is not the minimum `v0.2` adopt-now example.

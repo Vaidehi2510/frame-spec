@@ -127,7 +127,7 @@ Interpretation:
 ## Package Manifest Draft
 
 ```yaml
-spec_version: "0.1.1"
+spec_version: "0.2"
 package_id: "acme.operating-frame"
 package_version: "0.1.0"
 package_name: "Acme Operating Frame"
@@ -141,7 +141,7 @@ frames:
   - "project.alpha.yaml"
 dependencies:
   - package_id: "common.agent-coordination"
-    version: "^0.1.1"
+    version: "^0.2"
 distribution:
   visibility: "internal"
   exportable_scopes:
