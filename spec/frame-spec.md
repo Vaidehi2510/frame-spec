@@ -1,18 +1,18 @@
-# Frame Spec v0.1.1
+# Frame Spec v0.2
 
 ## Purpose
 
-This is the smallest adopt-now definition of a Frame.
+This is the adopt-now definition of a Frame.
 
-The goal of `v0.1.1` is immediate use, not completeness.
+The goal of `v0.2` is immediate use with just enough structure to support composition.
 
-If someone can write a Frame today, send it to another person by email, chat, or git, and that person can read and use it, then `v0.1.1` is doing its job.
+If someone can write a Frame today, share it, and layer it with other Frames so that context flows from broad to narrow scope, then `v0.2` is doing its job.
 
 ## Definition
 
 A Frame is a scoped, text-based artifact that carries cultural and operational context for work.
 
-In `v0.1.1`, a Frame should be:
+In `v0.2`, a Frame should be:
 
 - a Markdown file
 - human-readable
@@ -21,14 +21,14 @@ In `v0.1.1`, a Frame should be:
 
 ## File Format
 
-The preferred `v0.1.1` format is:
+The preferred `v0.2` format is:
 
 - Markdown body
 - YAML frontmatter at the top
 
 This intentionally follows the general shape that Skills already use, without requiring the full Skills standard to define what a Frame is.
 
-In `v0.1.1`, the canonical form is a single Markdown file.
+In `v0.2`, the canonical form is a single Markdown file.
 
 Future versions may also support a directory form with a canonical entry file such as `frame.md` plus optional supporting assets.
 
@@ -36,7 +36,7 @@ That future directory shape is intentionally left open for later, since it is mo
 
 ## Required Fields
 
-Every `v0.1.1` Frame should have:
+Every `v0.2` Frame should have:
 
 - `type`
 - `version`
@@ -55,7 +55,7 @@ type: frame
 or, to specify which version of the Frame Spec the Frame conforms to:
 
 ```yaml
-type: frame [0.1.1]
+type: frame [0.2]
 ```
 
 This is the minimal explicit hook that tells an AI system or surrounding implementation that the file is intended to be handled as a Frame rather than as generic Markdown. The bracketed spec version is optional but recommended.
@@ -89,10 +89,11 @@ Suggested values:
 
 ## Recommended Fields
 
-These are not required in `v0.1.1`, but they are encouraged:
+These are not required in `v0.2`, but they are encouraged:
 
 - `scope`
 - `author`
+- `inherits`
 
 ### `scope`
 
@@ -106,11 +107,27 @@ Examples:
 - `partner`
 - `personal`
 
-`v0.1.1` does not require a formal scope grammar.
+`v0.2` does not require a formal scope grammar.
 
 ### `author`
 
 The person, team, or organization that wrote the Frame.
+
+### `inherits`
+
+One or more parent Frames that this Frame extends. May be a single value or a list.
+
+```yaml
+inherits: company-core
+```
+
+```yaml
+inherits:
+  - company-core
+  - department-engineering
+```
+
+Values should be references that an implementation can resolve — typically a file path, a Frame name, or a URI. The spec does not require a specific resolution mechanism.
 
 ## Body Content
 
@@ -130,13 +147,42 @@ Typical content may include:
 
 Frames are intended to be loaded as system context for AI assistants, where tokens are at a premium. Authors should keep body content concise: prefer short bullets over long prose, omit boilerplate, and include only the guidance that would actually change how work is done. A Frame that is too long to read quickly is too long to be useful.
 
-`v0.1.1` does not require a fixed section taxonomy.
+`v0.2` does not require a fixed section taxonomy.
+
+## Inheritance
+
+A Frame may declare that it inherits from one or more parent Frames using the `inherits` field.
+
+### Semantics
+
+1. Inheritance must be explicit. A Frame only inherits what it declares.
+2. A child Frame extends its parents. All parent guidance applies unless the child overrides it.
+3. The child takes precedence. Where parent and child guidance conflict, the child wins.
+4. Parents are read in order. When multiple parents are listed, earlier entries have lower precedence than later entries. The child always has highest precedence.
+5. Inheritance is not transitive by default. If A inherits B and B inherits C, an implementation may resolve the full chain, but is not required to.
+
+### What Inheritance Means In Practice
+
+When a Frame with `inherits` is activated, an implementation should:
+
+1. Resolve and load the parent Frame(s).
+2. Present the combined guidance to the AI assistant, with the child's content taking precedence on any point of conflict.
+
+The simplest valid implementation is concatenation: parent content first, then child content, with a note that later content overrides earlier content.
+
+### Scope And Inheritance
+
+Inheritance typically flows from broader to narrower scope:
+
+- company → department → team → project
+
+This is a convention, not a requirement. A Frame may inherit from any other Frame regardless of scope.
 
 ## Minimal Example
 
 ```md
 ---
-type: frame [0.1.1]
+type: frame [0.2]
 version: 0.1.0
 name: OpenTeams Brand Voice
 description: Shared guidance for how OpenTeams communicates in external-facing writing.
@@ -162,13 +208,36 @@ author: marketing
 - Make important assumptions explicit.
 ```
 
-## What v0.1.1 Does Not Try To Define
+## Inheritance Example
 
-`v0.1.1` intentionally does not standardize:
+```md
+---
+type: frame [0.2]
+version: 0.1.0
+name: Engineering Team Voice
+description: Writing guidance for the engineering team, extending the company brand voice.
+visibility: internal
+scope: department
+author: engineering
+inherits: company-brand-voice
+---
+
+# Engineering Team Voice
+
+## Style
+
+- Use precise technical language when writing for engineers.
+- Keep the calm, direct tone from the company voice.
+- Code examples are preferred over abstract descriptions.
+```
+
+In this example, the engineering team Frame inherits the company brand voice Frame. All company-level guidance applies unless the engineering Frame overrides it. The engineering Frame narrows "calm, explanatory language" into "precise technical language" for its audience.
+
+## What v0.2 Does Not Try To Define
+
+`v0.2` intentionally does not standardize:
 
 - package manifests
-- inheritance semantics
-- layering behavior
 - canonical identity
 - provenance
 - review workflows
@@ -179,7 +248,7 @@ Those may become part of later versions, but they should not block immediate use
 
 ## Sharing
 
-A `v0.1.1` Frame may be shared in any ordinary way, including:
+A `v0.2` Frame may be shared in any ordinary way, including:
 
 - email
 - chat
@@ -196,8 +265,9 @@ At a minimum, an implementation should be able to:
 2. Read the remaining frontmatter as lightweight metadata.
 3. Read the Markdown body as contextual guidance for work.
 4. Apply that guidance when the Frame is made active by a user or system.
+5. When `inherits` is present, resolve parent Frames and combine their guidance with the child's.
 
-`v0.1.1` does not require more advanced behavior such as inheritance resolution, formal layering, provenance validation, or canonical-source lookup.
+`v0.2` does not require more advanced behavior such as transitive inheritance resolution, provenance validation, or canonical-source lookup.
 
 ## Relationship To Future Work
 
