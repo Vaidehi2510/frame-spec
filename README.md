@@ -89,7 +89,7 @@ This is still an early draft.
 What exists now:
 
 - a working concept and definition for Frames
-- a small spec that can be adopted immediately (currently `v0.1.1`)
+- a small spec that can be adopted immediately (currently `v0.2`)
 - a design note describing the problem and direction
 - future-oriented spec discussion documents
 - a Nebi integration illustration
