@@ -12,7 +12,24 @@ They are intended to be:
 
 This repository seed is a standalone starting point for the Frame spec as its own project.
 
-## Adopt Now
+## Start Here
+
+If you want to use Frames in day-to-day AI work:
+
+- Read [USING-FRAMES.md](USING-FRAMES.md) first.
+- Review [examples/minimal/README.md](examples/minimal/README.md) and [examples/minimal/frame.md](examples/minimal/frame.md) for the smallest concrete example.
+
+If you want to create, validate, or evolve Frames:
+
+- Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
+- Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid Frame Markdown.
+
+If you want background or future discussion:
+
+- Read [docs/overview.md](docs/overview.md) for the concept and working definition.
+- Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
+
+## Author Or Adopt Frames
 
 - Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
 - Review [examples/minimal/README.md](examples/minimal/README.md) for a concrete minimal example.
@@ -46,7 +63,7 @@ For the current boundary, read [docs/tools-and-aids.md](docs/tools-and-aids.md).
 - Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
 - Read [docs/spec-enhancement-process.md](docs/spec-enhancement-process.md) for a proposed lightweight process that separates exploratory ideas from active spec proposals.
 - Read [docs/spec-and-implementation.md](docs/spec-and-implementation.md) for the boundary between the Frame spec and the systems that realize Frames.
-- Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later spec alignment notes.
+- Read [references/Intelligence Hub Whitepaper - v5.md](references/Intelligence%20Hub%20Whitepaper%20-%20v5.md) for the repository copy of the latest whitepaper that informed the later spec alignment notes.
 - Review [examples/self-frame/README.md](examples/self-frame/README.md) and [examples/nebi-frame-package/README.md](examples/nebi-frame-package/README.md) for richer future-oriented examples.
 
 ## Repository Layout
@@ -55,14 +72,16 @@ For the current boundary, read [docs/tools-and-aids.md](docs/tools-and-aids.md).
 docs/
   overview.md
   design-note.md
+  how-to-use-frames.md
   tools-and-aids.md
-  future-directions.md
   spec-and-implementation.md
+  future-directions.md
   spec-sketch.md
   nebi-integration.md
   desktop-sharing.md
   v1-gap-analysis.md
   canonical-identity-proposal.md
+USING-FRAMES.md
 tools/
   README.md
   frame-builder.html
@@ -83,6 +102,7 @@ examples/
   nebi-frame-package/
 references/
   Intelligence Hub Whitepaper - v4.md
+  Intelligence Hub Whitepaper - v5.md
   travis-definition.md
 ```
 

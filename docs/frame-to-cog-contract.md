@@ -11,7 +11,7 @@ Its purpose is narrower:
 - describe the minimum contract the Frame spec will likely need to expose for future Cogs to consume Frames reliably
 - clarify what the Frame spec should define without trying to define Cog internals prematurely
 
-This note builds on [frame-cog-op-boundary.md](frame-cog-op-boundary.md) and the whitepaper's architectural distinction between Frames, Cogs, and Ops in [../references/Intelligence Hub Whitepaper - v4.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v4.md).
+This note builds on [frame-cog-op-boundary.md](frame-cog-op-boundary.md) and the whitepaper's architectural distinction between Frames, Cogs, and Ops in [../references/Intelligence Hub Whitepaper - v5.md](../references/Intelligence%20Hub%20Whitepaper%20-%20v5.md).
 
 ## Framing Assumption
 
