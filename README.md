@@ -21,6 +21,7 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 - Review [examples/v0.1-spec-stewardship-frame/README.md](examples/v0.1-spec-stewardship-frame/README.md) for a `v0.1` Frame that captures stewardship norms for evolving the spec.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid `v0.1` Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
+- Use [tools/customer-shared-frame-prompt.md](tools/customer-shared-frame-prompt.md) when creating a shared Frame for customer work between OpenTeams and an external organization.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
 
 ## Tools And Aids
@@ -68,6 +69,7 @@ tools/
   README.md
   frame-builder.html
   frame-authoring-assistant-prompt.md
+  customer-shared-frame-prompt.md
   frame-authoring-assistant/
   frame-reader/
 share/
