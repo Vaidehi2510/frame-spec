@@ -19,6 +19,7 @@ This repository seed is a standalone starting point for the Frame spec as its ow
 - Review [examples/minimal-self-frame/README.md](examples/minimal-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
+- Use [tools/customer-shared-frame-prompt.md](tools/customer-shared-frame-prompt.md) when creating a shared Frame for customer work between OpenTeams and an external organization.
 - Use [share/frame-builder-kit/README.md](share/frame-builder-kit/README.md) for the Slack/email-friendly distribution copy of the builder.
 
 ## Tools And Aids
@@ -66,6 +67,7 @@ tools/
   README.md
   frame-builder.html
   frame-authoring-assistant-prompt.md
+  customer-shared-frame-prompt.md
   frame-authoring-assistant/
   frame-reader/
 share/

@@ -28,6 +28,7 @@ It now starts in a guided blank state and lets the user load an example on deman
 This directory also includes lightweight AI authoring aids:
 
 - [frame-authoring-assistant-prompt.md](frame-authoring-assistant-prompt.md): a copy-paste prompt for any chat-based AI assistant
+- [customer-shared-frame-prompt.md](customer-shared-frame-prompt.md): a copy-paste prompt for creating a shared Frame for OpenTeams and a customer
 - [frame-authoring-assistant/SKILL.md](frame-authoring-assistant/SKILL.md): a reusable skill for AI-assisted Frame interviews and drafting
 
 These are meant for people who would rather talk through a Frame than build it from scratch in the form.
