@@ -44,7 +44,7 @@ platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
 python = ">=3.11"
 
 [tool.nebi.frame]
-spec-version = "0.1.0"
+spec-version = "0.2"
 
 [tool.nebi.frame.openteams.company-core]
 name = "OpenTeams Company Core Frame"

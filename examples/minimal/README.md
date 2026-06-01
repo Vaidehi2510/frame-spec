@@ -1,6 +1,6 @@
-# v0.1 Minimal Example
+# v0.2 Minimal Example
 
-This example shows the current adopt-now `v0.1` shape.
+This example shows the current adopt-now `v0.2` shape.
 
 It is intentionally simple:
 
