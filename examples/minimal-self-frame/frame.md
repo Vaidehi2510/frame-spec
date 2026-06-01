@@ -3,6 +3,7 @@ type: frame
 name: Frame Spec v0.2 Working Frame
 description: Minimal self-referential Frame describing how the current adopt-now Frame spec should be understood and used.
 visibility: internal
+version: 0.1.0
 scope: project
 author: frame-spec-authors
 ---
