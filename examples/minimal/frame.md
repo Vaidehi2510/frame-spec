@@ -5,6 +5,7 @@ description: Shared guidance for how OpenTeams communicates in external-facing w
 visibility: internal
 scope: company
 author: marketing
+version: 0.1.0
 ---
 
 # OpenTeams Brand Voice
