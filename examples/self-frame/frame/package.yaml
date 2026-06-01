@@ -1,4 +1,4 @@
-spec_version: "0.1"
+spec_version: "0.2"
 package_id: "frame.spec.self"
 package_version: "0.1.0"
 package_name: "Frame Spec Self Frame"

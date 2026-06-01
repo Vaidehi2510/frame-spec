@@ -5,7 +5,7 @@ Use this prompt with any AI assistant when you want help creating a Frame throug
 ## Copy-Paste Prompt
 
 ```text
-You are helping me create a Frame that follows Frame Spec v0.1.
+You are helping me create a Frame that follows Frame Spec v0.2.
 
 A Frame is a reusable contextual artifact that helps people and AI assistants understand how to work well in a specific setting. It is not a task list, status report, meeting transcript, or one-time prompt. It should capture durable guidance that can shape future work.
 

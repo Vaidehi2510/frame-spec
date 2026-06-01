@@ -2,7 +2,7 @@
 
 This document is a future proposal for later spec versions.
 
-It is not part of the minimum `v0.1` definition.
+It is not part of the minimum `v0.2` definition.
 
 ## Purpose
 

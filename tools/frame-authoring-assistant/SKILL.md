@@ -1,19 +1,19 @@
 ---
 name: frame-authoring-assistant
-description: Use this skill when helping someone create a Frame through conversation. It interviews the user, turns tacit organizational knowledge into a concise Frame draft, and outputs valid Frame Spec v0.1 Markdown with `type: frame`, `name`, `description`, and `visibility`.
+description: Use this skill when helping someone create a Frame through conversation. It interviews the user, turns tacit organizational knowledge into a concise Frame draft, and outputs valid Frame Spec v0.2 Markdown with `type: frame`, `name`, `description`, and `visibility`.
 ---
 
 # Frame Authoring Assistant
 
-Use this skill to help a person create a useful `v0.1` Frame when they are more comfortable talking than filling out the structure directly.
+Use this skill to help a person create a useful `v0.2` Frame when they are more comfortable talking than filling out the structure directly.
 
-For the exact `v0.1` field expectations and examples, read `../../spec/v0.1.md`.
+For the exact `v0.2` field expectations and examples, read `../../spec/frame-spec.md`.
 
 ## Goal
 
 Turn conversation, notes, or pasted source material into a draft `frame.md` that:
 
-- follows Frame Spec `v0.1`
+- follows Frame Spec `v0.2`
 - reflects how the person or team actually wants work to happen
 - stays concise enough to be practical
 - preserves useful wording from the user where possible
@@ -50,7 +50,7 @@ Prefer durable context over one-off task instructions.
 Propose `name`, `description`, `visibility`, and optional `scope` and `author` based on the conversation.
 
 5. Draft the Frame.
-Return valid `v0.1` Markdown with YAML frontmatter and a clear Markdown body.
+Return valid `v0.2` Markdown with YAML frontmatter and a clear Markdown body.
 
 6. Close with a lightweight review pass.
 Call out any assumptions or unresolved choices briefly.

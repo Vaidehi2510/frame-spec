@@ -1,13 +1,13 @@
 ---
 type: frame
-name: Frame Spec v0.1 Working Frame
+name: Frame Spec v0.2 Working Frame
 description: Minimal self-referential Frame describing how the current adopt-now Frame spec should be understood and used.
 visibility: internal
 scope: project
 author: frame-spec-authors
 ---
 
-# Frame Spec v0.1 Working Frame
+# Frame Spec v0.2 Working Frame
 
 ## Purpose
 
@@ -17,7 +17,7 @@ author: frame-spec-authors
 
 ## What Counts As A Frame
 
-- A `v0.1` Frame is a Markdown file with YAML frontmatter.
+- A `v0.2` Frame is a Markdown file with YAML frontmatter.
 - It must include `type: frame`, `name`, `description`, and `visibility`.
 - It may also include fields like `scope` and `author`.
 - The rest of the file should contain useful cultural or operational context in normal Markdown.
@@ -31,9 +31,9 @@ author: frame-spec-authors
 
 ## Constraints
 
-- Do not require package manifests, registries, or special runtime infrastructure for `v0.1`.
+- Do not require package manifests, registries, or special runtime infrastructure for `v0.2`.
 - Do not treat implementation details as part of the minimum spec.
-- Do not assume inheritance, layering, provenance, or governance semantics are settled in `v0.1`.
+- Do not assume inheritance, layering, provenance, or governance semantics are settled in `v0.2`.
 
 ## Terminology
 
@@ -43,6 +43,6 @@ author: frame-spec-authors
 
 ## Review Notes
 
-- If a proposed addition makes Frames harder to author or share immediately, it probably belongs in future work instead of `v0.1`.
+- If a proposed addition makes Frames harder to author or share immediately, it probably belongs in future work instead of `v0.2`.
 - If a tool helps people create or validate Frame artifacts, it can fit alongside the spec.
 - If a feature manages, activates, or operationalizes Frames in a live system, it likely belongs outside the minimum spec.
