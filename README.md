@@ -43,6 +43,7 @@ For the current boundary, read [docs/tools-and-aids.md](docs/tools-and-aids.md).
 ## Discussion And Future Work
 
 - Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
+- Read [docs/spec-enhancement-process.md](docs/spec-enhancement-process.md) for a proposed lightweight process that separates exploratory ideas from active spec proposals.
 - Read [docs/spec-and-implementation.md](docs/spec-and-implementation.md) for the boundary between the Frame spec and the systems that realize Frames.
 - Read [references/Intelligence Hub Whitepaper - v4.md](references/Intelligence%20Hub%20Whitepaper%20-%20v4.md) for the repository copy of the whitepaper that informed the later spec alignment notes.
 - Review [examples/self-frame/README.md](examples/self-frame/README.md) and [examples/nebi-frame-package/README.md](examples/nebi-frame-package/README.md) for richer future-oriented examples.
@@ -66,6 +67,7 @@ tools/
   frame-builder.html
   frame-authoring-assistant-prompt.md
   frame-authoring-assistant/
+  frame-reader/
 share/
   frame-builder-kit/
 spec/

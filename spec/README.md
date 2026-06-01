@@ -15,6 +15,7 @@ As the format stabilizes through real usage, this directory may also hold:
 - validation examples
 
 For future-facing discussion, see [../docs/future-directions.md](../docs/future-directions.md).
+For a proposed enhancement-track process that separates exploratory ideas from active spec proposals, see [../docs/spec-enhancement-process.md](../docs/spec-enhancement-process.md).
 
 Areas that now look important to formalize include:
 
