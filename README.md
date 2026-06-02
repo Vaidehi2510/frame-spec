@@ -5,7 +5,7 @@ Frames are scoped, text-based artifacts that carry the cultural and operational 
 They are intended to be:
 
 - readable by humans
-- applied by Cogs
+- applied by Cogs (specialized, self-contained AI workers that perform discrete tasks, oriented by the Frames that apply to them)
 - shareable across organizational boundaries when appropriate
 - inheritable across scopes such as company, department, team, project, partner, or vendor
 - first-class artifacts that can be authored, discovered, sold, and shared independently
@@ -30,6 +30,8 @@ If you want background or future discussion:
 - Read [docs/future-directions.md](docs/future-directions.md) for the map of future and discussion documents.
 
 ## Author Or Adopt Frames
+
+This is the fuller toolkit for people who are actively writing Frames. It expands on the "create, validate, or evolve Frames" path above.
 
 - Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
 - Review [examples/minimal/README.md](examples/minimal/README.md) for a concrete minimal example.
