@@ -1,5 +1,6 @@
 ---
 type: frame
+version: 0.1.0
 name: Frame Spec Stewardship
 description: Shared guidance for how the Frame spec should be evolved, reviewed, and discussed as a portable open standard.
 visibility: internal
