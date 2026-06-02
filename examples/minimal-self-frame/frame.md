@@ -19,7 +19,7 @@ author: frame-spec-authors
 ## What Counts As A Frame
 
 - A `v0.2` Frame is a Markdown file with YAML frontmatter.
-- It must include `type: frame`, `name`, `description`, and `visibility`.
+- It must include `type: frame`, `version`, `name`, `description`, and `visibility`.
 - It may also include fields like `scope` and `author`.
 - The rest of the file should contain useful cultural or operational context in normal Markdown.
 
