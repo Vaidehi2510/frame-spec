@@ -12,11 +12,12 @@ If someone can write a Frame today, share it, and layer it with other Frames so 
 
 A Frame is a scoped, text-based artifact that carries cultural and operational context for work.
 
+
 In `v0.2`, a Frame should be:
 
 - a Markdown file
 - human-readable
-- usable by a Cog or other AI assistant
+- - usable by a Cog (a specialized, self-contained AI worker that performs discrete tasks, oriented by the Frames that apply to it) or another AI assistant
 - easy to share manually
 
 ## File Format
@@ -26,7 +27,7 @@ The preferred `v0.2` format is:
 - Markdown body
 - YAML frontmatter at the top
 
-This intentionally follows the general shape that Skills already use, without requiring the full Skills standard to define what a Frame is.
+This intentionally follows the general shape that Skills(reusable instruction files that give an AI assistant task-specific guidance) already use, without requiring the full Skills standard to define what a Frame is.
 
 In `v0.2`, the canonical form is a single Markdown file.
 
@@ -161,6 +162,8 @@ A Frame may declare that it inherits from one or more parent Frames using the `i
 4. Parents are read in order. When multiple parents are listed, earlier entries have lower precedence than later entries. The child always has highest precedence.
 5. Inheritance is not transitive by default. If A inherits B and B inherits C, an implementation may resolve the full chain, but is not required to.
 
+Because transitive resolution is optional, the same Frame may behave differently across tools. Implementations should disclose whether they resolve inheritance chains transitively, and authors should not rely on transitive resolution unless a specific tool guarantees it.
+
 ### What Inheritance Means In Practice
 
 When a Frame with `inherits` is activated, an implementation should:
@@ -244,7 +247,9 @@ In this example, the engineering team Frame inherits the company brand voice Fra
 - publication registries
 - runtime management
 
-Those may become part of later versions, but they should not block immediate use.
+Those may become part of later versions, but they should not block immediate use. 
+
+Note on trust: Because a Frame is loaded as system context, it can influence how an AI assistant behaves. Provenance and source verification are future-facing and are not defined in v0.2. Until they are, implementations and users should only load Frames from trusted sources and should not treat a Frame's contents as verified.
 
 ## Sharing
 
