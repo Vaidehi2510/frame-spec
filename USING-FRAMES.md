@@ -228,3 +228,4 @@ Try these steps:
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) to help create new Frames.
 - Use [tools/frame-authoring-assistant/SKILL.md](tools/frame-authoring-assistant/SKILL.md) for AI-guided Frame authoring.
 - Use [tools/frame-reader/SKILL.md](tools/frame-reader/SKILL.md) when your AI tool supports reusable skills and you want more consistent Frame consumption.
+- Use `tools/validate_frames.py` as a lightweight preflight check for v0.2 Frame frontmatter.
