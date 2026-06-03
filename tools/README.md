@@ -37,6 +37,6 @@ These are meant for people who would rather talk through a Frame than build it f
 
 This directory also includes a lightweight usage aid:
 
-- [frame-reader/SKILL.md](frame-reader/SKILL.md): a reusable skill for reading one or more Frames, determining which are active for a task, and applying them consistently
+- [frame-reader/SKILL.md](frame-reader/SKILL.md): a standalone skill for reading one or more Frames, determining which are active for a task, resolving likely precedence, and applying them consistently
 
-This is meant to help ordinary AI tools use Frames more reliably without requiring a dedicated runtime.
+This is meant to help ordinary AI tools use Frames more reliably without requiring a dedicated runtime or access to this repository.

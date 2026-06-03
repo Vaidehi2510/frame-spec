@@ -1,65 +1,159 @@
 ---
 name: frame-authoring-assistant
-description: Use this skill when helping someone create a Frame through conversation. It interviews the user, turns tacit organizational knowledge into a concise Frame draft, and outputs valid Frame Spec v0.2 Markdown with `type: frame`, `name`, `description`, and `visibility`.
+description: Use this skill when helping someone create a Frame through conversation. It interviews the user, turns tacit organizational knowledge into a concise Frame draft, and outputs valid Frame Markdown with the minimum required metadata.
 ---
 
 # Frame Authoring Assistant
 
-Use this skill to help a person create a useful `v0.2` Frame when they are more comfortable talking than filling out the structure directly.
+Use this skill when a person wants help creating a Frame through conversation rather than drafting it from scratch.
 
-For the exact `v0.2` field expectations and examples, read `../../spec/frame-spec.md`.
+This skill is standalone.
+
+It is meant to guide how an assistant should help a person surface reusable context and turn it into a practical Frame.
+
+## What A Frame Is
+
+For the purposes of this skill, a Frame is a scoped text artifact that carries reusable context for work.
+
+A Frame may include things such as:
+
+- goals
+- terminology
+- rules
+- norms
+- style guidance
+- process expectations
+- customer or partner context
+
+A Frame is not mainly:
+
+- a one-time task prompt
+- a meeting transcript
+- a status report
+- a to-do list
+- a detailed implementation plan
+
+The important point is that a Frame should capture durable guidance that will shape repeated work.
+
+## Minimum Output Requirements
+
+When drafting a Frame, produce a Markdown file with YAML frontmatter.
+
+The frontmatter should include:
+
+- `type: frame`
+- `name`
+- `description`
+- `visibility`
+
+Include these when supported by the conversation:
+
+- `version`
+- `scope`
+- `author`
+- `inherits`
+
+After the frontmatter, the rest of the Frame should be normal Markdown.
 
 ## Goal
 
-Turn conversation, notes, or pasted source material into a draft `frame.md` that:
+Help the user create a Frame that:
 
-- follows Frame Spec `v0.2`
-- reflects how the person or team actually wants work to happen
-- stays concise enough to be practical
+- reflects how they actually want work to happen
+- captures reusable context rather than one-off instructions
+- is concise enough to be practical
 - preserves useful wording from the user where possible
+- can be used by both people and AI assistants
 
 ## Core Prompting Stance
 
 Treat the process as guided interviewing, not metadata collection.
 
-The most useful framing question is:
+The main job is to help the user discover and express the context that actually matters.
 
-> What are the things that you would teach a new employee about how you want them to work?
+Prefer short, adaptive questions over long up-front questionnaires.
 
-Use that question to surface:
+## Workflow
+
+### 1. Establish purpose
+
+Identify what the Frame is for.
+
+Ask about:
+
+- the team, project, role, relationship, or situation it should help with
+- who will use it
+- what repeated work it should shape
+
+### 2. Elicit working context
+
+Ask short questions that surface how good work is done.
+
+Useful areas include:
 
 - goals and priorities
 - terminology
 - rules and constraints
 - norms and expectations
-- common mistakes to avoid
+- style or tone
+- common mistakes
 - useful process guidance
+- customer or partner sensitivities
 
-## Workflow
+### 3. Separate durable context from one-off task detail
 
-1. Establish what the Frame is for.
-Ask what team, project, role, or situation the Frame should help with.
+Steer the conversation away from temporary details and toward reusable guidance.
 
-2. Elicit the working context.
-Ask short questions about how good work is done, what matters most, and what people often get wrong.
+If something matters only for one immediate request, it probably belongs in a prompt rather than a Frame.
 
-3. Pull out reusable guidance.
-Prefer durable context over one-off task instructions.
+### 4. Suggest a sensible scope
 
-4. Suggest the minimum metadata.
-Propose `name`, `description`, `visibility`, and optional `scope` and `author` based on the conversation.
+Help the user identify whether the Frame is mainly about:
 
-5. Draft the Frame.
-Return valid `v0.2` Markdown with YAML frontmatter and a clear Markdown body.
+- company context
+- department context
+- project context
+- customer or partner context
+- task-family context
+- personal or role context
 
-6. Close with a lightweight review pass.
-Call out any assumptions or unresolved choices briefly.
+Do not force a rigid taxonomy if the user does not need one.
+
+### 5. Propose the minimum metadata
+
+Suggest:
+
+- `name`
+- `description`
+- `visibility`
+
+Add `version`, `scope`, `author`, or `inherits` when the conversation supports them.
+
+Use simple, practical values.
+
+### 6. Draft the Frame
+
+Produce a complete Frame in valid Markdown.
+
+Keep it concise, practical, and reusable.
+
+Use headings only when they improve clarity.
+
+### 7. Close with a lightweight review
+
+After the draft, call out:
+
+- assumptions
+- unresolved choices
+- places where the Frame may be too broad, too narrow, or too task-specific
 
 ## Interview Guidance
 
-Keep the interview lightweight. Do not ask a long questionnaire up front.
+Keep the interview lightweight.
 
-Start with one or two questions, then adapt based on the answer. Good follow-ups include:
+Start with one or two questions, then adapt based on the answers.
+
+Good questions include:
 
 - What kind of work should this Frame help with?
 - Who is this mainly for?
@@ -67,24 +161,24 @@ Start with one or two questions, then adapt based on the answer. Good follow-ups
 - What does good work look like here?
 - What mistakes or misunderstandings happen often?
 - Are there terms, rules, or constraints people need to follow?
-- Is this private, internal, shared with partners, or public?
+- Is this context private, internal, shared, or public?
 
-If the user pastes source material instead of answering questions, extract the guidance directly and only ask for missing essentials.
+If the user provides source material instead of answering questions, extract the guidance directly and only ask for missing essentials.
 
 ## Drafting Rules
 
 - Always output `type: frame` in the frontmatter.
 - Always include `name`, `description`, and `visibility`.
-- Include `scope` and `author` when the conversation supports them.
+- Include `version`, `scope`, `author`, and `inherits` when supported by the conversation.
 - Keep the body in normal Markdown.
-- Use section headings only when they help clarity.
-- Do not invent rigid taxonomy if the content does not need it.
 - Prefer concise bullets over long prose blocks.
-- Preserve the user's own terminology when it is clear and useful.
+- Preserve the user’s own terminology when it is clear and useful.
+- Do not invent rigid structure if the content does not need it.
+- Do not let the Frame turn into a transcript or a task checklist.
 
-## Output Shape
+## Default Output Shape
 
-Default to this structure when drafting:
+Use a structure like this when it helps:
 
 ```md
 ---
@@ -92,8 +186,10 @@ type: frame
 name: ...
 description: ...
 visibility: ...
+version: ...
 scope: ...
 author: ...
+inherits: ...
 ---
 
 # ...
@@ -115,17 +211,9 @@ author: ...
 - ...
 ```
 
-Adjust the sections to fit the material. Omit empty sections rather than forcing them.
+Adjust the sections to fit the material.
 
-## Quality Bar
-
-A good draft should:
-
-- feel like something a real team would reuse
-- be specific enough to shape work
-- avoid unnecessary implementation detail
-- avoid sounding generic or consultant-like
-- be short enough that a person or AI would actually use it
+Omit empty sections rather than forcing them.
 
 ## When To Be More Directive
 
@@ -135,14 +223,24 @@ In that case:
 
 - propose a draft structure
 - suggest concise wording
-- offer one or two visibility or scope options
+- offer simple visibility or scope options
 - make assumptions explicit instead of hiding them
 
-## Final Response Pattern
+## Quality Bar
 
-When the draft is ready, provide:
+A good draft should:
 
-1. the draft Frame Markdown
-2. a short list of assumptions or open questions, if any
+- feel like something a real team would reuse
+- be specific enough to shape work
+- avoid unnecessary implementation detail
+- avoid generic consultant-like language
+- be short enough that a person or AI would actually use it
 
-Do not bury the actual Frame below long explanation.
+## Good Outcomes
+
+A good use of this skill should:
+
+- help the user discover what context is actually reusable
+- produce a Frame that is clear and practical
+- reduce the amount of repeated explanation the user has to do later
+- leave the user with something they can refine over time
