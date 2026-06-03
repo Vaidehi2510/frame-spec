@@ -18,6 +18,7 @@ If you want to use Frames in day-to-day AI work:
 
 - Read [USING-FRAMES.md](USING-FRAMES.md) first.
 - Review [examples/minimal/README.md](examples/minimal/README.md) and [examples/minimal/frame.md](examples/minimal/frame.md) for the smallest concrete example.
+- Review [examples/complete/README.md](examples/complete/README.md) and [examples/complete/frame.md](examples/complete/frame.md) for a fuller example with suggested metadata.
 
 If you want to create, validate, or evolve Frames:
 
@@ -35,6 +36,7 @@ This is the fuller toolkit for people who are actively writing Frames. It expand
 
 - Read [spec/frame-spec.md](spec/frame-spec.md) for the current minimum adopt-now spec.
 - Review [examples/minimal/README.md](examples/minimal/README.md) for a concrete minimal example.
+- Review [examples/complete/README.md](examples/complete/README.md) for a fuller example that includes suggested fields.
 - Review [examples/minimal-self-frame/README.md](examples/minimal-self-frame/README.md) for a self-referential example that uses the minimal spec to describe the spec itself.
 - Open [tools/frame-builder.html](tools/frame-builder.html) for a simple offline builder that generates valid Frame Markdown.
 - Use [tools/frame-authoring-assistant-prompt.md](tools/frame-authoring-assistant-prompt.md) when someone would rather create a Frame through an AI-guided conversation.
@@ -98,6 +100,7 @@ spec/
   frame-spec.md
 examples/
   minimal/
+  complete/
   minimal-self-frame/
   OT-FIR-program.md
   self-frame/
