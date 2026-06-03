@@ -17,7 +17,7 @@ In `v0.2`, a Frame should be:
 
 - a Markdown file
 - human-readable
-- - usable by a Cog (a specialized, self-contained AI worker that performs discrete tasks, oriented by the Frames that apply to it) or another AI assistant
+- usable by a Cog (a specialized, self-contained AI worker that performs discrete tasks, oriented by the Frames that apply to it) or another AI assistant
 - easy to share manually
 
 ## File Format
@@ -27,7 +27,7 @@ The preferred `v0.2` format is:
 - Markdown body
 - YAML frontmatter at the top
 
-This intentionally follows the general shape that Skills(reusable instruction files that give an AI assistant task-specific guidance) already use, without requiring the full Skills standard to define what a Frame is.
+This intentionally follows the general shape that Skills (reusable instruction files that give an AI assistant task-specific guidance) already use, without requiring the full Skills standard to define what a Frame is.
 
 In `v0.2`, the canonical form is a single Markdown file.
 

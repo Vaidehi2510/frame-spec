@@ -107,6 +107,9 @@ The task is to draft a follow-up email after a discovery meeting.
 
 If the Frames conflict or leave something unclear, tell me before drafting.
 ```
+## A Note On Sensitive Data
+
+Frames are pasted into external AI tools, so treat them like any other data you share with an outside service. Before using a Frame that contains customer, partner, or other confidential information, follow your organization's data-handling rules. Do not paste sensitive or restricted content into an external AI tool unless your organization permits it.
 
 ## Suggested Prompt Pattern
 
