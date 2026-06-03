@@ -40,3 +40,32 @@ This directory also includes a lightweight usage aid:
 - [frame-reader/SKILL.md](frame-reader/SKILL.md): a standalone skill for reading one or more Frames, determining which are active for a task, resolving likely precedence, and applying them consistently
 
 This is meant to help ordinary AI tools use Frames more reliably without requiring a dedicated runtime or access to this repository.
+
+## Frame Validator
+
+Use [validate_frames.py](validate_frames.py) as a lightweight preflight check for `v0.2` Frame frontmatter.
+
+It is dual-purpose:
+
+- Maintainer / CI use: keeps the repository's own example Frames from drifting away from the `v0.2` minimum spec.
+- Author use: gives someone writing a Frame a quick preflight check before sharing it or opening a PR.
+
+Run it on a single file or a directory:
+
+```
+python validate_frames.py path/to/frame.md
+python validate_frames.py examples
+```
+
+It checks that a Markdown Frame has the required `v0.2` frontmatter fields (`type`, `name`, `description`, `visibility`) and that the frontmatter block is present and readable. It exits with a non-zero status if any Frame fails, so it can run in CI.
+
+### Scope
+
+The scope of this validator is limited to lightweight `v0.2` Frame frontmatter checks for authoring and repository example hygiene. It does not:
+
+- validate full YAML
+- certify Frame quality or correctness
+- define runtime behavior
+- enforce Nexus, Collab, registry, or deployment behavior
+- replace human review
+
