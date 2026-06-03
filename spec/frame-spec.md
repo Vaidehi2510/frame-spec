@@ -40,7 +40,6 @@ That future directory shape is intentionally left open for later, since it is mo
 Every `v0.2` Frame should have:
 
 - `type`
-- `version`
 - `name`
 - `description`
 - `visibility`
@@ -60,16 +59,6 @@ type: frame [0.2]
 ```
 
 This is the minimal explicit hook that tells an AI system or surrounding implementation that the file is intended to be handled as a Frame rather than as generic Markdown. The bracketed spec version is optional but recommended.
-
-### `version`
-
-The current version of this Frame.
-
-```yaml
-version: 0.1.0
-```
-
-This tracks the Frame's own revision history, not the spec version. Authors should update this when the content of the Frame changes.
 
 ### `name`
 
@@ -92,9 +81,22 @@ Suggested values:
 
 These are not required in `v0.2`, but they are encouraged:
 
+- `version`
 - `scope`
 - `author`
 - `inherits`
+
+### `version`
+
+The current version of this Frame.
+
+```yaml
+version: 0.1.0
+```
+
+This tracks the Frame's own revision history, not the spec version. Authors should update this when the content of the Frame changes.
+
+`version` is suggested rather than required in `v0.2` so people can start using Frames without first committing to a versioning scheme. When a Frame is expected to be shared, revised, or referenced over time, including `version` is strongly recommended.
 
 ### `scope`
 
@@ -186,20 +188,17 @@ This is a convention, not a requirement. A Frame may inherit from any other Fram
 ```md
 ---
 type: frame [0.2]
-version: 0.1.0
-name: OpenTeams Brand Voice
-description: Shared guidance for how OpenTeams communicates in external-facing writing.
-visibility: internal
-scope: company
-author: marketing
+name: Editorial Style Guide
+description: Shared guidance for clear, consistent external writing.
+visibility: shared
 ---
 
-# OpenTeams Brand Voice
+# Editorial Style Guide
 
 ## Goals
 
 - Be clear, direct, and credible.
-- Avoid hype when describing technical capabilities.
+- Avoid hype and overclaiming.
 
 ## Terminology
 
@@ -211,30 +210,36 @@ author: marketing
 - Make important assumptions explicit.
 ```
 
-## Inheritance Example
+This example is intentionally minimal. It uses only the fields required by `v0.2`.
+
+## More Complete Example
 
 ```md
 ---
 type: frame [0.2]
-version: 0.1.0
-name: Engineering Team Voice
-description: Writing guidance for the engineering team, extending the company brand voice.
+name: Engineering Documentation Style
+description: Writing guidance for engineering documentation that extends a broader editorial style guide.
 visibility: internal
+version: 0.1.0
 scope: department
-author: engineering
-inherits: company-brand-voice
+author: engineering enablement
+inherits: editorial-style-guide
 ---
 
-# Engineering Team Voice
+# Engineering Documentation Style
 
 ## Style
 
 - Use precise technical language when writing for engineers.
-- Keep the calm, direct tone from the company voice.
+- Keep the calm, direct tone from the broader editorial guidance.
 - Code examples are preferred over abstract descriptions.
 ```
 
-In this example, the engineering team Frame inherits the company brand voice Frame. All company-level guidance applies unless the engineering Frame overrides it. The engineering Frame narrows "calm, explanatory language" into "precise technical language" for its audience.
+This example includes several suggested fields from `v0.2`, including `version`, `scope`, `author`, and `inherits`.
+
+## Inheritance Example
+
+In the example above, the engineering documentation Frame inherits the editorial style guide Frame. All parent guidance applies unless the child Frame overrides it. The child Frame narrows broad editorial guidance into conventions for engineering documentation.
 
 ## What v0.2 Does Not Try To Define
 

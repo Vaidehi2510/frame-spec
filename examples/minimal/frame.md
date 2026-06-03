@@ -1,19 +1,16 @@
 ---
 type: frame
-name: OpenTeams Brand Voice
-description: Shared guidance for how OpenTeams communicates in external-facing writing.
-visibility: internal
-scope: company
-author: marketing
-version: 0.1.0
+name: Editorial Style Guide
+description: Shared guidance for clear, consistent external writing.
+visibility: shared
 ---
 
-# OpenTeams Brand Voice
+# Editorial Style Guide
 
 ## Goals
 
 - Be clear, direct, and credible.
-- Avoid hype when describing technical capabilities.
+- Avoid hype and overclaiming.
 
 ## Terminology
 
